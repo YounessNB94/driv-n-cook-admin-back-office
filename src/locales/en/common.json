@@ -1,0 +1,990 @@
+{
+  "brand": {
+    "name": "DRIV'N COOK",
+    "tagline": "Gourmet trucks, disciplined logistics.",
+    "description": "Driv'n Cook is a premium food-truck network: franchisees manage their truck, menu, and stock from a single portal powered by the Quarkus endpoints listed in /doc.",
+    "ctaPrimary": "Create my account",
+    "ctaSecondary": "Already a franchisee? Log in"
+  },
+  "navigation": {
+    "home": "Home",
+    "presentation": "Who we are",
+    "purpose": "What it solves",
+    "steps": "How we support you",
+    "testimonials": "Franchisees",
+    "accountLabel": "Franchisee account",
+    "login": "Log in",
+    "signup": "Sign up",
+    "logout": "Log out",
+    "menu": "Menu",
+    "dashboard": "Dashboard",
+    "backOffice": "Back office",
+    "language": "Language"
+  },
+  "auth": {
+    "signup": {
+      "title": "Request franchise access",
+      "subtitle": "Share a few details and we will finalize your onboarding once authentication is fully open.",
+      "messages": {
+        "pendingApi": "Franchise authentication endpoints are still being finalized. Submitting this form only keeps data locally for now.",
+        "success": "Thanks! Your information has been stored locally (mock). Our HQ team will reach out as soon as the secure flow is ready."
+      },
+      "fields": {
+        "firstName": { "label": "First name", "placeholder": "Sarah" },
+        "lastName": { "label": "Last name", "placeholder": "Martin" },
+        "email": { "label": "Email", "placeholder": "you@example.com" },
+        "phone": {
+          "label": "Phone number",
+          "placeholder": "+33 6 00 00 00 00",
+          "helper": "Optional. Helps us schedule discovery calls."
+        },
+        "companyName": { "label": "Company", "placeholder": "Food Truck SARL" },
+        "address": { "label": "Business address", "placeholder": "12 rue des Lilas, 75000 Paris" },
+        "password": { "label": "Password", "placeholder": "At least 8 characters" },
+        "passwordConfirm": { "label": "Confirm password", "placeholder": "Repeat your password" }
+      },
+      "cta": {
+        "submit": "Send my application",
+        "back": "Back to portal home",
+        "haveAccount": "Already have an account? Return to the portal home"
+      },
+      "validation": {
+        "required": "This field is required.",
+        "email": "Enter a valid email address.",
+        "passwordLength": "Use at least {{count}} characters.",
+        "maxLength": "Keep it under {{count}} characters.",
+        "passwordMatch": "Passwords must match."
+      }
+    }
+  },
+  "landing": {
+    "hero": {
+      "title": "Driv’n Cook",
+      "tagline": "Organic franchise rooted in Greater Paris",
+      "color": "Pick the accent color applied when no photo is available.",
+      "highlights": [
+        { "label": "15 years of food-truck expertise", "icon": "experience" },
+        { "label": "Nationwide support", "icon": "network" },
+        { "label": "Streamlined supply chain", "icon": "supply" }
+      ],
+      "back": "Back to dashboard",
+      "uploadPhoto": "Upload a photo",
+      "removePhoto": "Remove photo",
+      "form": {
+        "title": "Your truck, your space",
+        "address": "Full address",
+        "photoUrl": "Photo / avatar link",
+        "accentColor": "Header icon color",
+        "details": [
+          "14 m² of modular workspace",
+          "Hybrid power with silent generator"
+        ],
+        "updated": "Changes saved (mock).",
+        "avatar": "Provide a public (square) image URL to personalize the header avatar.",
+        "color": "Pick the accent color applied when no photo is available.",
+        "preview": "Live preview of what appears in the header."
+      }
+    },
+    "presentation": {
+      "title": "Who we are",
+      "description": "Driv'n Cook is a curated network of gourmet trucks. Franchisees operate independently while relying on a shared operating system tailored to their daily business needs.",
+      "bullets": [
+        "Operations and financial coaching informed by daily data",
+        "Premium brand assets ready for local events",
+        "Logistics partners to secure fresh ingredients year-round"
+      ]
+    },
+    "purpose": {
+      "title": "What the platform solves",
+      "subtitle": "Each pillar matches a question every franchisee asks before launching.",
+      "items": [
+        {
+          "title": "Brand & menu clarity",
+          "description": "Signature recipes, pricing guidance, and campaign templates to introduce the truck in any city.",
+          "icon": "menu"
+        },
+        {
+          "title": "Daily steering",
+          "description": "Dashboards and alerts covering applications, supply, sales, and incidents so you always know the next action.",
+          "icon": "insights"
+        },
+        {
+          "title": "Responsible supply",
+          "description": "Warehouses curated by the HQ team with eco-friendly packaging and negotiated prices.",
+          "icon": "forest"
+        }
+      ]
+    },
+    "conditions": {
+      "title": "Key conditions",
+      "subtitle": "We look for passionate profiles ready to live the street-food scene in a premium way and create strong local bonds.",
+      "badgeLabel": "Included",
+      "items": [
+        "Entry fee from €50,000, including truck customization.",
+        "Royalty scaled to revenue with progressive tiers.",
+        "Exclusive territory to protect your area and secure local partnerships."
+      ],
+      "meetingTitle": "Personalized meeting",
+      "meetingDescription": "Weekly discovery sessions to present the roadmap, financial outlook, and answer every question."
+    },
+    "steps": {
+      "title": "How we support you",
+      "subtitle": "A clear journey from the first idea to profitable service.",
+      "stepLabel": "Step",
+      "items": [
+        {
+          "title": "Discovery call",
+          "detail": "Share your project, target area, and learn about our financial model."
+        },
+        {
+          "title": "Signing & training",
+          "detail": "Two immersive weeks to tune your truck, menu, and local communication."
+        },
+        {
+          "title": "Launch with coaching",
+          "detail": "Field team support, opening media plan, and 90-day personalized follow-up."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What franchisees say",
+      "subtitle": "A glimpse of how the Driv’n Cook platform supports daily operations.",
+      "items": [
+        {
+          "name": "Sarah, Paris",
+          "quote": "“I wanted a people-first franchise. Driv’n Cook helped me structure operations while keeping creativity alive.”"
+        },
+        {
+          "name": "Mathieu, Montreuil",
+          "quote": "“Supply runs are smooth so I can focus on premium events that boost revenue.”"
+        }
+      ]
+    },
+    "closing": {
+      "title": "Ready to launch with Driv’n Cook?",
+      "description": "Review the documentation, align your roadmap, and confirm your territory. Once authentication ships, you can request full access directly from this portal.",
+      "cta": "Create my account",
+      "helper": "Account creation flow coming soon."
+    }
+  },
+  "dashboard": {
+    "welcome": {
+      "title": "Franchise dashboard",
+      "subtitle": "A quick overview of your operations and next steps."
+    },
+    "summary": {
+      "title": "At a glance",
+      "applications": {
+        "title": "Applications",
+        "value": "{{count}} pending",
+        "status": "Latest status: {{status}}",
+        "cta": "View applications"
+      },
+      "supply": {
+        "title": "Supply",
+        "value": "Pickup on {{date}}",
+        "status": "Warehouse {{warehouse}}",
+        "cta": "Manage supply orders"
+      },
+      "sales": {
+        "title": "Sales today",
+        "value": "{{amount}} incl. tax",
+        "status": "+{{trend}} vs yesterday",
+        "cta": "Review sales"
+      }
+    },
+    "upcoming": {
+      "title": "Upcoming actions",
+      "appointment": "{{type}} pickup – {{warehouse}}",
+      "supply": "Order #{{code}} ({{status}})",
+      "empty": "No action planned yet."
+    },
+    "quickLinks": {
+      "title": "Quick links",
+      "profile": "Franchise profile",
+      "applications": "Applications",
+      "appointments": "Appointments",
+      "warehouses": "Warehouses & inventory",
+      "supplyOrders": "Supply orders",
+      "menu": "Menu & items",
+      "customerOrders": "Customer orders",
+      "truck": "Truck & incidents",
+      "loyaltyCards": "Loyalty cards",
+      "sales": "Sales history",
+      "reports": "Analytics reports"
+    },
+    "cta": {
+      "viewApplications": "View applications",
+      "manageSupply": "Manage orders",
+      "editMenu": "Edit menu",
+      "seeSales": "Analyze sales",
+      "seeReports": "Open reports"
+    },
+    "statuses": {
+      "PENDING": "Pending",
+      "APPROVED": "Approved",
+      "REJECTED": "Rejected",
+      "DRAFT": "Draft",
+      "CONFIRMED": "Confirmed",
+      "READY": "Ready",
+      "COLLECTED": "Collected"
+    },
+    "appointmentTypes": {
+      "SUPPLY_PICKUP": "Supply",
+      "TRUCK_PICKUP": "Truck"
+    }
+  },
+  "salesHistory": {
+    "title": "Sales history",
+    "subtitle": "Analyze sales per period and menu item based on GET /sales.",
+    "cta": {
+      "back": "Back to dashboard",
+      "refresh": "Refresh",
+      "export": "Export CSV",
+      "apply": "Apply filters",
+      "reset": "Reset"
+    },
+    "filters": {
+      "from": "From",
+      "to": "To",
+      "menuItem": "Menu item",
+      "menuItemAll": "All menu items"
+    },
+    "validation": {
+      "range": "The end date must be after the start date."
+    },
+    "totals": {
+      "title": "Current totals",
+      "quantityLabel": "{{count}} items sold",
+      "amountLabel": "€{{amount}} incl. tax"
+    },
+    "table": {
+      "date": "Date",
+      "item": "Menu item",
+      "quantity": "Qty",
+      "total": "Total",
+      "channel": "Channel"
+    },
+    "channels": {
+      "ON_SITE": "On site",
+      "RESERVATION": "Reservation"
+    },
+    "messages": {
+      "empty": "No sales match your filters.",
+      "exportSuccess": "CSV export ready (mock).",
+      "refresh": "Data refreshed (mock).",
+      "fetchError": "Unable to load sales. Try again shortly.",
+      "menuItemsError": "Unable to load menu items for filtering."
+    }
+  },
+    "customerOrders": {
+      "title": "Customer orders",
+      "subtitle": "Manage GET /customer-orders, POST /customer-orders, PATCH /customer-orders/{orderId}, and POST /customer-orders/{orderId}/items against the live API.",
+      "cta": {
+        "back": "Back to dashboard",
+        "refresh": "Refresh",
+        "create": "Create order",
+        "newOrder": "New order",
+        "select": "Manage this order",
+        "clear": "Close selection",
+        "addItem": "Add item",
+        "removeItem": "Remove",
+        "updateStatus": "Update status",
+        "markReady": "Mark as ready",
+        "cancel": "Cancel"
+      },
+      "creation": {
+        "title": "New order",
+        "description": "Provide the order type and optionally attach a loyalty card; this proxies POST /customer-orders.",
+        "typeLabel": "Order type",
+        "typePlaceholder": "Select a type",
+        "loyaltyLabel": "Loyalty card (optional)",
+        "loyaltyPlaceholder": "Pick a loyalty card",
+        "submit": "Create",
+        "validation": {
+          "type": "Pick an order type before creating the order."
+        }
+      },
+      "items": {
+        "title": "Order items",
+        "description": "POST /customer-orders/{orderId}/items accepts a menuItemId and quantity.",
+        "helper": "Select an order to manage its lines.",
+        "menuItemLabel": "Menu item",
+        "menuItemPlaceholder": "Choose a menu item",
+        "quantityLabel": "Quantity",
+        "quantityPlaceholder": "Qty",
+        "submit": "Add line",
+        "validation": {
+          "menuItem": "Select a menu item before adding a line.",
+          "quantity": "Enter a quantity greater than 0."
+        },
+        "table": {
+          "title": "Current lines",
+          "headers": {
+            "item": "Item",
+            "quantity": "Qty",
+            "total": "Total",
+            "actions": "Actions"
+          },
+          "empty": "No items yet."
+        },
+        "loading": "Loading lines..."
+      },
+      "status": {
+        "title": "Status & payment",
+        "description": "PATCH /customer-orders/{orderId} updates the fulfillment status or payment details.",
+        "statusLabel": "Status",
+        "statusPlaceholder": "Select a status",
+        "paidLabel": "Order paid",
+        "paymentMethodLabel": "Payment method",
+        "paymentMethodPlaceholder": "Select a method",
+        "submit": "Update",
+        "validation": {
+          "status": "Select a status before updating.",
+          "paymentMethod": "Choose a payment method when the order is marked as paid."
+        }
+      },
+      "table": {
+        "title": "Orders",
+        "headers": {
+          "id": "Order ID",
+          "type": "Type",
+          "status": "Status",
+          "loyalty": "Loyalty",
+          "paid": "Paid",
+          "totals": "Totals",
+          "updatedAt": "Updated",
+          "actions": "Actions"
+        },
+        "empty": "No orders to display yet."
+      },
+      "totals": {
+        "title": "Order totals",
+        "cash": "€{{amount}}",
+        "points": "{{points}} pts"
+      },
+      "types": {
+        "ON_SITE": "On site",
+        "RESERVATION": "Reservation"
+      },
+      "statuses": {
+        "CREATED": "Created",
+        "PREPARING": "Preparing",
+        "READY": "Ready",
+        "COMPLETED": "Completed",
+        "CANCELLED": "Cancelled"
+      },
+      "paymentMethods": {
+        "CASH": "Cash",
+        "POINTS": "Points"
+      },
+      "messages": {
+        "created": "Order created successfully.",
+        "items": "Line added to the order.",
+        "itemRemoved": "Line removed from the order.",
+        "statusUpdated": "Order updated.",
+        "refresh": "Data refreshed.",
+        "selectOrder": "Select an order first.",
+        "error": "Unable to complete this action. Try again in a moment.",
+        "loadError": "Unable to load customer orders. Please retry."
+      },
+      "dialog": {
+        "currentStatus": "Current status",
+        "unpaidHelper": "Mark the order as paid to enable the Ready button."
+      },
+      "createPage": {
+        "title": "New order",
+        "subtitle": "Add menu items to the freshly created order, then start preparation.",
+        "info": {
+          "title": "Order summary"
+        },
+        "cta": {
+          "finish": "Move to preparing",
+          "back": "Back to orders"
+        },
+        "messages": {
+          "ready": "Order moved to preparing.",
+          "missingOrder": "Unable to find this order."
+        }
+      }
+    },
+  "loyaltyCards": {
+    "title": "Loyalty cards",
+    "subtitle": "Uses POST /loyalty-cards, GET /loyalty-cards, GET /loyalty-cards/{cardId}, and GET /loyalty-cards?code=XYZ directly against the backend (see doc/endpoints.md).",
+    "cta": {
+      "back": "Back to dashboard",
+      "refresh": "Refresh",
+      "create": "New card",
+      "select": "Inspect this card",
+      "clear": "Close details"
+    },
+    "creation": {
+      "description": "Create a card instantly: we generate the customer reference and code, and it starts at 0 points."
+    },
+    "details": {
+      "title": "Card details",
+      "createdAt": "Created",
+      "points": "Points balance",
+      "code": "Code",
+      "helper": "Select a card to inspect details.",
+      "link": "Use for customer order",
+      "loading": "Loading card details..."
+    },
+    "table": {
+      "title": "Existing cards",
+      "headers": {
+        "id": "ID",
+        "code": "Code",
+        "points": "Points",
+        "createdAt": "Created",
+        "actions": "Actions"
+      },
+      "empty": "No loyalty card yet.",
+      "loading": "Loading loyalty cards..."
+    },
+    "messages": {
+      "created": "Loyalty card created.",
+      "refresh": "List updated.",
+      "loadError": "Unable to load loyalty cards right now.",
+      "detailError": "Unable to load this card's details.",
+      "createError": "Card creation failed. Please try again shortly."
+    }
+  },
+  "truck": {
+    "title": "Truck, incidents & maintenance",
+    "subtitle": "Stay aligned with GET /trucks/me, GET /trucks/{truckId}/incidents, GET /trucks/{truckId}/maintenance-records, and POST /trucks/{truckId}/incidents.",
+    "cta": {
+      "back": "Back to dashboard",
+      "refresh": "Refresh",
+      "createIncident": "Log incident"
+    },
+    "truckInfo": {
+      "title": "Assigned truck",
+      "plate": "Plate number",
+      "status": "Status",
+      "warehouse": "Current warehouse",
+      "warehouseUnknown": "No warehouse assigned yet.",
+      "helper": "Data mirrors GET /trucks/me."
+    },
+    "incidents": {
+      "title": "Incidents",
+      "subtitle": "Recent issues impacting the truck.",
+      "formTitle": "Create incident",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "e.g. Refrigeration alert during service",
+      "submit": "Create incident",
+      "table": {
+        "headers": {
+          "description": "Description",
+          "status": "Status",
+          "createdAt": "Created",
+          "actions": "Actions"
+        },
+        "empty": "No incidents reported."
+      }
+    },
+    "actions": {
+      "viewDetail": "View detail"
+    },
+    "maintenance": {
+      "title": "Maintenance records",
+      "subtitle": "Historic interventions from GET /trucks/{truckId}/maintenance-records.",
+      "table": {
+        "headers": {
+          "date": "Date",
+          "description": "Work done"
+        },
+        "empty": "No maintenance records yet."
+      }
+    },
+    "statuses": {
+      "truck": {
+        "ASSIGNED": "Assigned",
+        "IN_SERVICE": "In service",
+        "IN_REPAIR": "In repair"
+      },
+      "incident": {
+        "OPEN": "Open",
+        "IN_PROGRESS": "In progress",
+        "RESOLVED": "Resolved"
+      }
+    },
+    "validation": {
+      "description": "Enter a short description before logging an incident."
+    },
+    "messages": {
+      "incidentCreated": "Incident logged successfully.",
+      "incidentCreateFailed": "Unable to log the incident. Please try again.",
+      "refresh": "Truck data refreshed.",
+      "loadFailed": "Unable to load truck information. Try again later."
+    }
+  },
+  "incidentDetail": {
+    "title": "Incident detail",
+    "subtitle": "Mirror GET /incidents/{incidentId} and link it with truck data from GET /trucks/me.",
+    "cta": {
+      "back": "Back to truck",
+      "refresh": "Refresh",
+      "openTruck": "View truck"
+    },
+    "incident": {
+      "description": "Description",
+      "status": "Status",
+      "createdAt": "Created"
+    },
+    "truck": {
+      "title": "Related truck",
+      "plate": "Plate number",
+      "status": "Status",
+      "warehouse": "Warehouse"
+    },
+    "timeline": {
+      "title": "Timeline",
+      "created": "Incident opened"
+    },
+    "messages": {
+      "missing": "Incident not found (mock).",
+      "refresh": "Incident data refreshed (mock).",
+      "truckMissing": "Related truck not available (mock).",
+      "timelineEmpty": "No events recorded for this incident."
+    }
+  },
+  "reports": {
+    "title": "Analytics reports",
+    "subtitle": "Trigger POST /reports with ReportRequest and follow statuses via GET /reports/{reportId}.",
+    "cta": {
+      "back": "Back to dashboard",
+      "refresh": "Refresh",
+      "generate": "Request report"
+    },
+    "form": {
+      "title": "New report",
+      "typeLabel": "Report type",
+      "typePlaceholder": "Select a type",
+      "fromLabel": "From",
+      "toLabel": "To",
+      "submit": "Launch",
+      "validation": {
+        "typeRequired": "Pick a report type before launching.",
+        "fromRequired": "Start date is required.",
+        "toRequired": "End date is required.",
+        "range": "The end date must be after the start date."
+      }
+    },
+    "table": {
+      "title": "Generated reports",
+      "headers": {
+        "id": "ID",
+        "type": "Type",
+        "period": "Period",
+        "status": "Status",
+        "createdAt": "Created",
+        "actions": "Actions"
+      }
+    },
+    "types": {
+      "SALES_STATS": "Sales stats",
+      "TOP_ITEMS": "Top items",
+      "REVENUE": "Revenue"
+    },
+    "statuses": {
+      "PENDING": "Pending",
+      "READY": "Ready",
+      "FAILED": "Failed"
+    },
+    "messages": {
+      "empty": "No reports yet.",
+      "created": "Report requested.",
+      "download": "Download triggered.",
+      "failed": "Report generation failed.",
+      "refresh": "List refreshed.",
+      "retry": "Report relaunched.",
+      "fetchError": "Unable to load reports. Try again shortly.",
+      "actionError": "Action failed. Please retry."
+    },
+    "actions": {
+      "download": "Download",
+      "retry": "Retry"
+    }
+  },
+  "profile": {
+    "title": "Franchise profile",
+    "subtitle": "Keep your details up to date for smoother back-office processing.",
+    "sections": {
+      "identity": "Identity",
+      "contact": "Contact",
+      "company": "Company",
+      "address": "Address"
+    },
+    "fields": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "phone": "Phone",
+      "companyName": "Company name",
+      "address": "Full address"
+    },
+    "helper": {
+      "email": "Email can only be changed by support.",
+      "updated": "Changes saved (mock)."
+    },
+    "actions": {
+      "viewDetail": "View detail"
+    },
+    "cta": {
+      "back": "Back",
+      "save": "Save changes"
+    }
+  },
+  "franchiseTerms": {
+    "title": "Franchise terms",
+    "subtitle": "Read-only data provided by GET /franchise-terms.",
+    "fields": {
+      "version": "Version",
+      "entryFee": "Entry fee",
+      "royalty": "Royalty",
+      "supplyRule": "Supply rule",
+      "content": "Full summary"
+    },
+    "cta": {
+      "back": "Back",
+      "dashboard": "Back to dashboard"
+    }
+  },
+  "franchiseApplications": {
+    "title": "Franchise applications",
+    "subtitle": "Track each request, keep an eye on statuses, and mark payments before the real API calls are wired.",
+    "cta": {
+      "new": "New application",
+      "refresh": "Refresh list",
+      "markPayment": "Mark payment"
+    },
+    "table": {
+      "headers": {
+        "id": "ID",
+        "status": "Status",
+        "paid": "Paid",
+        "paymentMethod": "Payment method",
+        "paymentRef": "Payment ref",
+        "createdAt": "Created",
+        "updatedAt": "Updated",
+        "actions": "Actions"
+      }
+    },
+    "badges": {
+      "paid": "Paid",
+      "unpaid": "Unpaid"
+    },
+    "paymentMethods": {
+      "CASH": "Cash",
+      "CARD": "Card",
+      "BANK_TRANSFER": "Bank transfer"
+    },
+    "messages": {
+      "empty": "No applications yet.",
+      "created": "Application submitted (mock).",
+      "paymentUpdated": "Payment status updated (mock)."
+    },
+    "create": {
+      "title": "Submit a new request",
+      "noteLabel": "Motivation note",
+      "notePlaceholder": "Explain your project, target territory, or expected launch date.",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "validation": {
+        "noteRequired": "Please write a short note."
+      }
+    },
+    "payment": {
+      "title": "Payment update",
+      "paidSwitch": "Application paid",
+      "methodLabel": "Payment method",
+      "methodPlaceholder": "Select a method",
+      "refLabel": "Reference (optional)",
+      "helper": "Allowed values follow DTO PaymentMethod: CASH, CARD, BANK_TRANSFER.",
+      "submit": "Update",
+      "cancel": "Cancel",
+      "validation": {
+        "methodRequired": "Select a method when marking the application as paid."
+      }
+    }
+  },
+  "warehouses": {
+    "title": "Warehouses & stock",
+    "subtitle": "Mocked read-only data for GET /warehouses and GET /warehouses/{id}/inventory-items.",
+    "cta": {
+      "back": "Back to dashboard",
+      "viewStock": "View stock",
+      "close": "Close"
+    },
+    "table": {
+      "headers": {
+        "name": "Warehouse",
+        "address": "Address",
+        "phone": "Phone",
+        "actions": "Actions"
+      }
+    },
+    "inventory": {
+      "title": "Available stock",
+      "empty": "No inventory items for this warehouse.",
+      "headers": {
+        "name": "Item",
+        "unit": "Unit",
+        "quantity": "Available"
+      }
+    }
+  },
+  "supplyOrders": {
+    "title": "Supply orders",
+    "subtitle": "Connected screens aligned with GET/POST/PATCH SupplyOrder endpoints described in doc/endpoints.md.",
+    "cta": {
+      "back": "Back to dashboard",
+      "new": "New order",
+      "refresh": "Refresh",
+      "manageItems": "Manage items",
+      "updateMeta": "Update order"
+    },
+    "table": {
+      "headers": {
+        "code": "Order",
+        "status": "Status",
+        "warehouse": "Warehouse",
+        "paid": "Payment",
+        "updatedAt": "Updated",
+        "actions": "Actions"
+      }
+    },
+    "statuses": {
+      "DRAFT": "Draft",
+      "CONFIRMED": "Confirmed",
+      "READY": "Ready",
+      "COLLECTED": "Collected"
+    },
+    "payment": {
+      "paid": "Paid",
+      "unpaid": "Unpaid"
+    },
+    "create": {
+      "title": "Create supply order",
+      "warehouseLabel": "Pickup warehouse",
+      "warehousePlaceholder": "Select a warehouse",
+      "noteLabel": "Internal note (optional)",
+      "submit": "Create",
+      "cancel": "Cancel",
+      "confirmationHelper": "Orders start as drafts without a warehouse. Add items first, then pick a warehouse when validating the order.",
+      "validation": {
+        "warehouseRequired": "Select a warehouse before creating the order."
+      },
+      "success": "Supply order created."
+    },
+    "items": {
+      "title": "Manage order items",
+      "empty": "No items yet.",
+      "headers": {
+        "name": "Item",
+        "unit": "Unit",
+        "quantity": "Quantity"
+      },
+      "loadError": "Unable to load items for this order.",
+      "noWarehouse": "Assign a pickup warehouse before adding items.",
+      "inventoryFallback": "Item #{{id}}",
+      "add": {
+        "inventoryLabel": "Inventory item",
+        "inventoryPlaceholder": "Select an item",
+        "quantityLabel": "Quantity",
+        "submit": "Add",
+        "validation": {
+          "inventoryRequired": "Choose an item from the list.",
+          "quantityPositive": "Quantity must be greater than 0."
+        }
+      },
+      "update": {
+        "quantityLabel": "Quantity"
+      },
+      "success": "Items updated."
+    },
+    "metadata": {
+      "title": "Update order",
+      "statusLabel": "Status",
+      "warehouseLabel": "Pickup warehouse",
+      "paymentSwitch": "Order paid",
+      "paymentMethodLabel": "Payment method",
+      "paymentRefLabel": "Reference",
+      "paymentMethodPlaceholder": "Select a payment method",
+      "submit": "Save",
+      "cancel": "Cancel",
+      "validation": {
+        "warehouseRequired": "Select a warehouse.",
+        "paymentMethodRequired": "Select a method when the order is marked paid."
+      },
+      "success": "Order updated.",
+      "availability": {
+        "helper": "Only warehouses with enough stock stay selectable.",
+        "loading": "Checking warehouse availability…",
+        "fetchError": "Unable to verify availability right now.",
+        "sufficient": "Stock OK",
+        "insufficient": "Insufficient stock",
+        "unavailable": "Unavailable",
+        "none": "No warehouse currently matches the requested quantities."
+      }
+    },
+    "messages": {
+      "empty": "No supply orders yet.",
+      "refresh": "List refreshed.",
+      "fetchError": "Unable to load supply orders. Try again shortly.",
+      "actionError": "Action failed. Please retry."
+    }
+  },
+  "appointments": {
+    "title": "Appointments",
+    "subtitle": "Connected view aligned with GET/POST/PATCH appointments endpoints (see doc/endpoints.md).",
+    "cta": {
+      "back": "Back to dashboard",
+      "new": "Plan appointment",
+      "refresh": "Refresh",
+      "edit": "Edit"
+    },
+    "table": {
+      "headers": {
+        "type": "Type",
+        "warehouse": "Warehouse",
+        "link": "Link",
+        "datetime": "Date & time",
+        "status": "Status",
+        "actions": "Actions"
+      }
+    },
+    "typeOptions": {
+      "SUPPLY_PICKUP": "Supply pickup",
+      "TRUCK_PICKUP": "Truck pickup"
+    },
+    "statusOptions": {
+      "SCHEDULED": "Scheduled",
+      "COMPLETED": "Completed",
+      "CANCELLED": "Cancelled"
+    },
+    "messages": {
+      "empty": "No appointments yet.",
+      "created": "Appointment created.",
+      "updated": "Appointment updated.",
+      "fetchError": "Unable to load appointments. Try again shortly.",
+      "createError": "Unable to create the appointment. Please retry.",
+      "updateError": "Unable to update the appointment. Please retry.",
+      "supplyOrderFallback": "Order #{{id}}",
+      "truckFallback": "Truck #{{id}}"
+    },
+    "create": {
+      "title": "Plan an appointment",
+      "typeLabel": "Type",
+      "warehouseLabel": "Warehouse",
+      "warehousePlaceholder": "Select a warehouse",
+      "supplyOrderLabel": "Supply order",
+      "supplyOrderPlaceholder": "Select an order",
+      "truckLabel": "Truck",
+      "truckPlaceholder": "Select a truck",
+      "datetimeLabel": "Date & time",
+      "submit": "Create",
+      "cancel": "Cancel",
+      "validation": {
+        "typeRequired": "Select a type.",
+        "warehouseRequired": "Select a warehouse.",
+        "datetimeRequired": "Select a date and time.",
+        "supplyOrderRequired": "Choose a supply order for this pickup.",
+        "truckRequired": "Choose a truck for this pickup."
+      }
+    },
+    "edit": {
+      "title": "Edit appointment",
+      "datetimeLabel": "Date & time",
+      "statusLabel": "Status",
+      "submit": "Save",
+      "cancel": "Cancel"
+    }
+  },
+  "menu": {
+    "title": "Menu & items",
+    "subtitle": "Mirror POST/GET/PATCH from MenusResource (doc/endpoints.md) to manage menu status and MenuItem CRUD in mock mode.",
+    "cta": {
+      "back": "Back to dashboard",
+      "refresh": "Refresh list",
+      "createMenu": "Create menu",
+      "publish": "Publish menu",
+      "unpublish": "Return to draft"
+    },
+    "summary": {
+      "title": "Menu status",
+      "statusLabel": "Current status",
+      "updatedAt": "Updated {{date}}",
+      "helper": "PATCH /menus/me toggles between Draft and Published."
+    },
+    "statuses": {
+      "DRAFT": "Draft",
+      "PUBLISHED": "Published"
+    },
+    "chips": {
+      "available": "Available",
+      "unavailable": "Unavailable"
+    },
+    "items": {
+      "title": "Menu items",
+      "empty": "No menu items yet.",
+      "headers": {
+        "name": "Item",
+        "priceCash": "Cash price",
+        "pointsPrice": "Points price",
+        "available": "Available",
+        "actions": "Actions"
+      }
+    },
+    "create": {
+      "title": "Add menu item",
+      "inventoryLabel": "Warehouse ingredient",
+      "inventoryPlaceholder": "Select an ingredient",
+      "inventoryLoading": "Loading warehouse items…",
+      "inventoryEmpty": "No warehouse items available.",
+      "alreadyInMenu": "Already in menu",
+      "nameLabel": "Name",
+      "priceLabel": "Price (EUR)",
+      "pointsLabel": "Points price (optional)",
+      "availableLabel": "Available for sale",
+      "submit": "Add item"
+    },
+    "edit": {
+      "title": "Edit menu item",
+      "submit": "Save changes",
+      "cancel": "Cancel"
+    },
+    "actions": {
+      "edit": "Edit",
+      "enable": "Mark available",
+      "disable": "Mark unavailable",
+      "delete": "Delete"
+    },
+    "validation": {
+      "name": "Please enter a name.",
+      "price": "Price must be greater than zero.",
+      "points": "Points price must be greater than zero.",
+      "inventory": "Select an ingredient from the warehouse list."
+    },
+    "messages": {
+      "menuMissing": "Create a menu before managing items.",
+      "menuCreated": "Menu created.",
+      "menuCreateError": "Unable to create the menu. Try again shortly.",
+      "statusUpdated": "Menu status updated.",
+      "statusUpdateError": "Unable to update the menu status.",
+      "itemsRefreshed": "Menu data refreshed.",
+      "fetchError": "Unable to load the menu. Try again shortly.",
+      "itemsFetchError": "Unable to load menu items. Try again shortly.",
+      "inventoryFetchError": "Unable to load warehouse inventory.",
+      "itemCreated": "Menu item added.",
+      "itemCreateError": "Unable to add the menu item.",
+      "itemUpdated": "Menu item updated.",
+      "itemUpdateError": "Unable to update the menu item.",
+      "itemDeleted": "Menu item removed.",
+      "itemDeleteError": "Unable to delete the menu item.",
+      "availabilityUpdated": "Availability updated.",
+      "availabilityUpdateError": "Unable to update availability."
+    }
+  }
+}

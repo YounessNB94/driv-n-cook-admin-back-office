@@ -1,0 +1,984 @@
+{
+  "brand": {
+    "name": "DRIV'N COOK",
+    "tagline": "Food-trucks premium, logistique maîtrisée.",
+    "description": "Driv'n Cook est un réseau de food-trucks gastronomiques : les franchisés pilotent camion, menu et stock depuis un portail aligné sur les endpoints Quarkus décrits dans /doc.",
+    "ctaPrimary": "Créer mon compte",
+    "ctaSecondary": "Déjà franchisé ? Connexion"
+  },
+      "confirmationHelper": "La commande est créée en brouillon sans entrepôt. Ajoute les articles puis choisis l'entrepôt lors de la validation.",
+  "navigation": {
+    "home": "Accueil",
+    "presentation": "Qui sommes-nous",
+    "purpose": "À quoi ça sert",
+    "steps": "Comment on t'accompagne",
+    "testimonials": "Témoignages",
+    "accountLabel": "Compte franchisé",
+    "login": "Connexion",
+    "signup": "Inscription",
+    "logout": "Déconnexion",
+    "menu": "Menu",
+    "dashboard": "Tableau de bord",
+    "backOffice": "Back office",
+    "language": "Langue"
+  },
+  "auth": {
+    "signup": {
+      "title": "Demander un accès franchise",
+      "subtitle": "Partage ces informations et nous finaliserons ton onboarding dès que l'authentification sera ouverte.",
+      "messages": {
+        "pendingApi": "Les endpoints d'authentification sont encore en construction. L'envoi du formulaire conserve les données uniquement en local pour l'instant.",
+        "success": "Merci ! Tes informations sont enregistrées localement (mock). Le siège te recontactera dès que le flux sécurisé sera prêt."
+      },
+      "fields": {
+        "firstName": { "label": "Prénom", "placeholder": "Sarah" },
+        "lastName": { "label": "Nom", "placeholder": "Martin" },
+        "email": { "label": "Email", "placeholder": "toi@exemple.com" },
+        "phone": {
+          "label": "Téléphone",
+          "placeholder": "+33 6 00 00 00 00",
+          "helper": "Facultatif. Sert uniquement à planifier un échange."
+        },
+        "companyName": { "label": "Entreprise", "placeholder": "Food Truck SARL" },
+        "address": { "label": "Adresse complète", "placeholder": "12 rue des Lilas, 75000 Paris" },
+        "password": { "label": "Mot de passe", "placeholder": "Au moins 8 caractères" },
+        "passwordConfirm": { "label": "Confirme ton mot de passe", "placeholder": "Répète le mot de passe" }
+      },
+      "cta": {
+        "submit": "Envoyer ma demande",
+        "back": "Retour à l'accueil",
+        "haveAccount": "Déjà inscrit ? Retour à l'accueil"
+      },
+      "validation": {
+        "required": "Champ obligatoire.",
+        "email": "Renseigne un email valide.",
+        "passwordLength": "Utilise au moins {{count}} caractères.",
+        "maxLength": "Maximum {{count}} caractères.",
+        "passwordMatch": "Les mots de passe doivent correspondre."
+      }
+    }
+  },
+  "landing": {
+    "hero": {
+      "title": "Driv’n Cook",
+      "tagline": "Franchise engagée ancrée en Île-de-France",
+      "subtitle": "Rejoins la flotte gastronomique qui combine sourcing responsable, design travaillé et coaching business quotidien.",
+      "highlights": [
+        { "label": "15 ans d'expertise food-truck", "icon": "experience" },
+        { "label": "Support basé en Île-de-France", "icon": "network" },
+        { "label": "Chaîne d'approvisionnement optimisée", "icon": "supply" }
+      ],
+      "card": {
+        "title": "Ton camion, ton espace",
+        "description": "Cuisine ouverte, comptoir chaleureux et équipement premium pour le rush de midi comme les événements privés.",
+        "details": [
+          "14 m² d'espace modulable",
+          "Énergie hybride avec générateur silencieux",
+          "Matériaux : bois clair, acier brossé, LED ambrées"
+        ]
+      }
+    },
+    "presentation": {
+      "title": "Qui sommes-nous ?",
+      "description": "Driv'n Cook rassemble des food-trucks gastronomiques qui partagent un même socle d'outils. Chaque franchisé reste autonome tout en s'appuyant sur une plateforme d'accompagnement dédiée.",
+      "bullets": [
+        "Coaching opérationnel et financier guidé par les données",
+        "Identité premium prête pour les événements locaux",
+        "Partenaires logistiques pour sécuriser l'approvisionnement toute l'année"
+      ]
+    },
+    "purpose": {
+      "title": "À quoi ça sert ?",
+      "subtitle": "Nos piliers répondent aux questions clés avant de lancer un camion.",
+      "items": [
+        {
+          "title": "Clarté marque & menu",
+          "description": "Recettes signature, positionnement prix et templates de campagne pour exister dans chaque ville.",
+          "icon": "menu"
+        },
+        {
+          "title": "Pilotage quotidien",
+          "description": "Tableaux de bord et alertes sur candidatures, supply, ventes et incidents pour savoir quoi faire ensuite.",
+          "icon": "insights"
+        },
+        {
+          "title": "Supply responsable",
+          "description": "Entrepôts sourcés par le siège, packaging éco et tarifs négociés.",
+          "icon": "forest"
+        }
+      ]
+    },
+    "conditions": {
+      "title": "Conditions clés",
+      "subtitle": "Nous privilégions les profils passionnés prêts à créer du lien local.",
+      "badgeLabel": "Inclus",
+      "items": [
+        "Droit d’entrée à partir de 50 000 € incluant la personnalisation du camion.",
+        "Redevence d’exploitation ajustée au chiffre d’affaires avec paliers progressifs.",
+        "Zone d’exclusivité définie pour protéger ton territoire et faciliter les partenariats locaux."
+      ],
+      "meetingTitle": "Rencontre personnalisée",
+      "meetingDescription": "Nous organisons des sessions découvertes chaque semaine pour présenter la feuille de route, les projections financières et répondre aux questions."
+    },
+    "steps": {
+      "title": "Comment on t’accompagne",
+      "subtitle": "Un parcours clair pour passer de l’idée aux premiers revenus.",
+      "stepLabel": "Étape",
+      "items": [
+        {
+          "title": "Rencontre",
+          "detail": "Partage ton projet, ton secteur cible et découvre notre modèle économique."
+        },
+        {
+          "title": "Signature & formation",
+          "detail": "Deux semaines intensives pour calibrer camion, menu et communication locale."
+        },
+        {
+          "title": "Lancement accompagné",
+          "detail": "Support terrain, plan média d’ouverture et suivi personnalisé pendant 90 jours."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Ce que disent les franchisés",
+      "subtitle": "Extrait des retours terrain sur la plateforme Driv'n Cook.",
+      "items": [
+        {
+          "name": "Sarah, Paris",
+          "quote": "“Je voulais une franchise humaine. Driv’n Cook m’a aidée à structurer mes opérations tout en gardant ma créativité en cuisine.”"
+        },
+        {
+          "name": "Mathieu, Nanterre",
+          "quote": "“Les supply runs sont fluides et je peux me concentrer sur les événements premium qui boostent mon chiffre.”"
+        }
+      ]
+    },
+    "closing": {
+      "title": "Prêt à vous lancer avec Driv'n Cook ?",
+      "description": "Parcourez la documentation, validez votre zone et votre business plan. Dès que l'authentification sera ouverte, vous pourrez demander un accès complet depuis ce portail.",
+      "cta": "Créer mon compte",
+      "helper": "Flux d'authentification en cours de préparation."
+    }
+  },
+  "dashboard": {
+    "welcome": {
+      "title": "Tableau de bord franchise",
+      "subtitle": "Vue synthétique de tes opérations et prochaines actions."
+    },
+    "summary": {
+      "title": "En un coup d’œil",
+      "applications": {
+        "title": "Candidatures",
+        "value": "{{count}} en attente",
+        "status": "Dernier statut : {{status}}",
+        "cta": "Voir les candidatures"
+      },
+      "supply": {
+        "title": "Approvisionnement",
+        "value": "Retrait le {{date}}",
+        "status": "Entrepôt {{warehouse}}",
+        "cta": "Gérer les commandes"
+      },
+      "sales": {
+        "title": "Ventes du jour",
+        "value": "{{amount}} € TTC",
+        "status": "+{{trend}} vs hier",
+        "cta": "Analyser les ventes"
+      }
+    },
+    "upcoming": {
+      "title": "Actions à venir",
+      "appointment": "Retrait {{type}} – {{warehouse}}",
+      "supply": "Commande #{{code}} ({{status}})",
+      "empty": "Rien de planifié pour le moment."
+    },
+    "quickLinks": {
+      "title": "Liens rapides",
+      "profile": "Profil franchisé",
+      "applications": "Candidatures",
+      "appointments": "Rendez-vous",
+      "warehouses": "Entrepôts & stock",
+      "supplyOrders": "Approvisionnements",
+      "menu": "Menu & plats",
+      "customerOrders": "Commandes clients",
+      "truck": "Camion & incidents",
+      "loyaltyCards": "Cartes de fidélité",
+      "sales": "Historique des ventes",
+      "reports": "Rapports analytiques"
+    },
+    "cta": {
+      "viewApplications": "Voir les candidatures",
+      "manageSupply": "Gérer les commandes",
+      "editMenu": "Éditer le menu",
+      "seeSales": "Analyser les ventes",
+      "seeReports": "Ouvrir les rapports"
+    },
+    "statuses": {
+      "PENDING": "En attente",
+      "APPROVED": "Approuvée",
+      "REJECTED": "Refusée",
+      "DRAFT": "Brouillon",
+      "CONFIRMED": "Confirmée",
+      "READY": "Prête",
+      "COLLECTED": "Collectée"
+    },
+    "appointmentTypes": {
+      "SUPPLY_PICKUP": "Approvisionnement",
+      "TRUCK_PICKUP": "Camion"
+    }
+  },
+  "salesHistory": {
+    "title": "Historique des ventes",
+    "subtitle": "Analyse les quantités et le chiffre par plat via GET /sales.",
+    "cta": {
+      "back": "Retour au tableau de bord",
+      "refresh": "Rafraîchir",
+      "export": "Exporter CSV",
+      "apply": "Filtrer",
+      "reset": "Réinitialiser"
+    },
+    "filters": {
+      "from": "Du",
+      "to": "Au",
+      "menuItem": "Plat",
+      "menuItemAll": "Tous les plats"
+    },
+    "validation": {
+      "range": "La date de fin doit être postérieure à la date de début."
+    },
+    "totals": {
+      "title": "Totaux courants",
+      "quantityLabel": "{{count}} pièces vendues",
+      "amountLabel": "{{amount}} € TTC"
+    },
+    "table": {
+      "date": "Date",
+      "item": "Plat",
+      "quantity": "Qté",
+      "total": "Total",
+      "channel": "Canal"
+    },
+    "channels": {
+      "ON_SITE": "Sur place",
+      "RESERVATION": "Réservation"
+    },
+    "messages": {
+      "empty": "Aucune vente pour ce filtre.",
+      "exportSuccess": "Export CSV prêt (mock).",
+      "refresh": "Données rafraîchies (mock).",
+      "fetchError": "Impossible de charger les ventes pour le moment.",
+      "menuItemsError": "Impossible de charger les plats pour le filtre."
+    }
+  },
+    "customerOrders": {
+      "title": "Commandes clients",
+      "subtitle": "Exploite GET /customer-orders, POST /customer-orders, PATCH /customer-orders/{orderId} et POST /customer-orders/{orderId}/items directement via l’API.",
+      "cta": {
+        "back": "Retour au tableau de bord",
+        "refresh": "Rafraîchir",
+        "create": "Créer la commande",
+        "newOrder": "Nouvelle commande",
+        "select": "Gérer cette commande",
+        "clear": "Fermer la sélection",
+        "addItem": "Ajouter un article",
+        "removeItem": "Supprimer",
+        "updateStatus": "Mettre à jour",
+        "markReady": "Passer en prête",
+        "cancel": "Annuler"
+      },
+      "creation": {
+        "title": "Nouvelle commande",
+        "description": "Précise le type de commande et, si besoin, rattache une carte fidélité; la page envoie POST /customer-orders.",
+        "typeLabel": "Type de commande",
+        "typePlaceholder": "Choisir un type",
+        "loyaltyLabel": "Carte fidélité (optionnel)",
+        "loyaltyPlaceholder": "Sélectionner une carte",
+        "submit": "Créer",
+        "validation": {
+          "type": "Merci de choisir un type de commande."
+        }
+      },
+      "items": {
+        "title": "Lignes de commande",
+        "description": "POST /customer-orders/{orderId}/items attend un menuItemId et une quantité.",
+        "helper": "Sélectionne une commande pour gérer ses lignes.",
+        "menuItemLabel": "Plat",
+        "menuItemPlaceholder": "Choisir un plat",
+        "quantityLabel": "Quantité",
+        "quantityPlaceholder": "Qté",
+        "submit": "Ajouter la ligne",
+        "validation": {
+          "menuItem": "Choisis un plat avant d’ajouter une ligne.",
+          "quantity": "Saisis une quantité supérieure à 0."
+        },
+        "table": {
+          "title": "Lignes en cours",
+          "headers": {
+            "item": "Plat",
+            "quantity": "Qté",
+            "total": "Total",
+            "actions": "Actions"
+          },
+          "empty": "Aucune ligne pour le moment."
+        },
+        "loading": "Chargement des lignes..."
+      },
+      "status": {
+        "title": "Statut & paiement",
+        "description": "PATCH /customer-orders/{orderId} permet d’ajuster le statut et/ou le paiement.",
+        "statusLabel": "Statut",
+        "statusPlaceholder": "Choisir un statut",
+        "paidLabel": "Commande réglée",
+        "paymentMethodLabel": "Méthode de paiement",
+        "paymentMethodPlaceholder": "Choisir une méthode",
+        "submit": "Mettre à jour",
+        "validation": {
+          "status": "Choisis un statut avant de valider.",
+          "paymentMethod": "Sélectionne une méthode si la commande est marquée comme réglée."
+        }
+      },
+      "table": {
+        "title": "Commandes",
+        "headers": {
+          "id": "ID commande",
+          "type": "Type",
+          "status": "Statut",
+          "loyalty": "Fidélité",
+          "paid": "Payée",
+          "totals": "Totaux",
+          "updatedAt": "Mis à jour",
+          "actions": "Actions"
+        },
+        "empty": "Aucune commande à afficher pour le moment."
+      },
+      "totals": {
+        "title": "Totaux",
+        "cash": "{{amount}} €",
+        "points": "{{points}} pts"
+      },
+      "types": {
+        "ON_SITE": "Sur place",
+        "RESERVATION": "Réservation"
+      },
+      "statuses": {
+        "CREATED": "Créée",
+        "PREPARING": "En préparation",
+        "READY": "Prête",
+        "COMPLETED": "Terminée",
+        "CANCELLED": "Annulée"
+      },
+      "paymentMethods": {
+        "CASH": "Espèces",
+        "POINTS": "Points"
+      },
+      "messages": {
+        "created": "Commande créée.",
+        "items": "Ligne ajoutée.",
+        "itemRemoved": "Ligne supprimée.",
+        "statusUpdated": "Commande mise à jour.",
+        "refresh": "Données rafraîchies.",
+        "selectOrder": "Sélectionne d’abord une commande.",
+        "error": "Impossible de terminer cette action. Réessaie dans un instant.",
+        "loadError": "Impossible de charger les commandes clients. Réessaie plus tard."
+      },
+      "dialog": {
+        "currentStatus": "Statut actuel",
+        "unpaidHelper": "Marque la commande comme réglée pour activer le bouton Prête."
+      },
+      "createPage": {
+        "title": "Nouvelle commande",
+        "subtitle": "Ajoute des articles à la commande fraîchement créée puis lance la préparation.",
+        "info": {
+          "title": "Résumé de la commande"
+        },
+        "cta": {
+          "finish": "Passer en préparation",
+          "back": "Retour aux commandes"
+        },
+        "messages": {
+          "ready": "Commande envoyée en préparation.",
+          "missingOrder": "Impossible de trouver cette commande."
+        }
+      }
+    },
+  "loyaltyCards": {
+    "title": "Cartes de fidélité",
+    "subtitle": "Consulte et crée les cartes via GET /loyalty-cards, POST /loyalty-cards, GET /loyalty-cards/{cardId} et GET /loyalty-cards?code=XYZ directement via l’API (voir doc/endpoints.md).",
+    "cta": {
+      "back": "Retour au tableau de bord",
+      "refresh": "Rafraîchir",
+      "create": "Nouvelle carte",
+      "select": "Consulter cette carte",
+      "clear": "Fermer le détail"
+    },
+    "creation": {
+      "description": "Crée une carte en un clic : on génère la référence client et le code, avec un solde initial à 0 point."
+    },
+    "details": {
+      "title": "Détail de la carte",
+      "createdAt": "Créée le",
+      "points": "Solde de points",
+      "code": "Code",
+      "helper": "Sélectionne une carte pour afficher le détail.",
+      "link": "Utiliser pour une commande",
+      "loading": "Chargement du détail de la carte..."
+    },
+    "table": {
+      "title": "Cartes existantes",
+      "headers": {
+        "id": "ID",
+        "code": "Code",
+        "points": "Points",
+        "createdAt": "Créée",
+        "actions": "Actions"
+      },
+      "empty": "Aucune carte fidélité pour l’instant.",
+      "loading": "Chargement des cartes de fidélité..."
+    },
+    "messages": {
+      "created": "Carte fidélité créée.",
+      "refresh": "Liste mise à jour.",
+      "loadError": "Impossible de charger les cartes pour le moment.",
+      "detailError": "Impossible de charger le détail de cette carte.",
+      "createError": "Impossible de créer la carte. Réessaie dans un instant."
+    }
+  },
+  "truck": {
+    "title": "Camion, incidents & maintenance",
+    "subtitle": "Consulte GET /trucks/me, GET /trucks/{truckId}/incidents, GET /trucks/{truckId}/maintenance-records et crée des incidents via POST /trucks/{truckId}/incidents.",
+    "cta": {
+      "back": "Retour au tableau de bord",
+      "refresh": "Rafraîchir",
+      "createIncident": "Déclarer un incident"
+    },
+    "truckInfo": {
+      "title": "Camion assigné",
+      "plate": "Immatriculation",
+      "status": "Statut",
+      "warehouse": "Entrepôt actuel",
+      "warehouseUnknown": "Aucun entrepôt assigné pour l’instant.",
+      "helper": "Données issues de GET /trucks/me."
+    },
+    "incidents": {
+      "title": "Incidents",
+      "subtitle": "Derniers événements impactant le camion.",
+      "formTitle": "Déclarer un incident",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "ex. Alerte frigo pendant le service",
+      "submit": "Créer l’incident",
+      "table": {
+        "headers": {
+          "description": "Description",
+          "status": "Statut",
+          "createdAt": "Créé le",
+          "actions": "Actions"
+        },
+        "empty": "Aucun incident déclaré."
+      }
+    },
+    "actions": {
+      "viewDetail": "Voir le détail"
+    },
+    "maintenance": {
+      "title": "Historique maintenance",
+      "subtitle": "Synthèse GET /trucks/{truckId}/maintenance-records.",
+      "table": {
+        "headers": {
+          "date": "Date",
+          "description": "Travaux réalisés"
+        },
+        "empty": "Aucune intervention enregistrée."
+      }
+    },
+    "statuses": {
+      "truck": {
+        "ASSIGNED": "Assigné",
+        "IN_SERVICE": "En service",
+        "IN_REPAIR": "En maintenance"
+      },
+      "incident": {
+        "OPEN": "Ouvert",
+        "IN_PROGRESS": "En cours",
+        "RESOLVED": "Résolu"
+      }
+    },
+    "validation": {
+      "description": "Merci de décrire l’incident avant de l’enregistrer."
+    },
+    "messages": {
+      "incidentCreated": "Incident enregistré avec succès.",
+      "incidentCreateFailed": "Impossible d'enregistrer l'incident. Réessaie dans un instant.",
+      "refresh": "Données camion mises à jour.",
+      "loadFailed": "Impossible de charger les informations camion. Réessaie plus tard."
+    }
+  },
+  "incidentDetail": {
+    "title": "Suivi détaillé d'un incident",
+    "subtitle": "Reproduis GET /incidents/{incidentId} et rattache l'incident au camion obtenu via GET /trucks/me.",
+    "cta": {
+      "back": "Retour camion",
+      "refresh": "Rafraîchir",
+      "openTruck": "Voir le camion"
+    },
+    "incident": {
+      "description": "Description",
+      "status": "Statut",
+      "createdAt": "Ouverture"
+    },
+    "truck": {
+      "title": "Camion concerné",
+      "plate": "Immatriculation",
+      "status": "Statut",
+      "warehouse": "Entrepôt"
+    },
+    "timeline": {
+      "title": "Frise",
+      "created": "Incident ouvert"
+    },
+    "messages": {
+      "missing": "Incident introuvable (mock).",
+      "refresh": "Incident rafraîchi (mock).",
+      "truckMissing": "Camion rattaché introuvable (mock).",
+      "timelineEmpty": "Aucun événement enregistré pour cet incident."
+    }
+  },
+  "reports": {
+    "title": "Rapports analytiques",
+    "subtitle": "Déclenche POST /reports (ReportRequest) puis suis les statuts via GET /reports/{reportId}.",
+    "cta": {
+      "back": "Retour au tableau de bord",
+      "refresh": "Rafraîchir",
+      "generate": "Demander un rapport"
+    },
+    "form": {
+      "title": "Nouveau rapport",
+      "typeLabel": "Type de rapport",
+      "typePlaceholder": "Choisir un type",
+      "fromLabel": "Du",
+      "toLabel": "Au",
+      "submit": "Lancer",
+      "validation": {
+        "typeRequired": "Choisir un type avant de lancer.",
+        "fromRequired": "La date de début est obligatoire.",
+        "toRequired": "La date de fin est obligatoire.",
+        "range": "La date de fin doit être postérieure à la date de début."
+      }
+    },
+    "table": {
+      "title": "Rapports générés",
+      "headers": {
+        "id": "ID",
+        "type": "Type",
+        "period": "Période",
+        "status": "Statut",
+        "createdAt": "Créé le",
+        "actions": "Actions"
+      }
+    },
+    "types": {
+      "SALES_STATS": "Stats de ventes",
+      "TOP_ITEMS": "Meilleurs plats",
+      "REVENUE": "Revenus"
+    },
+    "statuses": {
+      "PENDING": "En attente",
+      "READY": "Prêt",
+      "FAILED": "Échec"
+    },
+    "messages": {
+      "empty": "Aucun rapport pour l’instant.",
+      "created": "Rapport demandé.",
+      "download": "Téléchargement lancé.",
+      "failed": "Échec de génération.",
+      "refresh": "Liste rafraîchie.",
+      "retry": "Rapport relancé.",
+      "fetchError": "Impossible de charger les rapports. Réessaie dans un instant.",
+      "actionError": "L’action a échoué. Merci de réessayer."
+    },
+    "actions": {
+      "download": "Télécharger",
+      "retry": "Relancer"
+    }
+  },
+  "profile": {
+    "title": "Profil franchisé",
+    "subtitle": "Garde tes informations à jour pour faciliter les démarches back-office.",
+    "sections": {
+      "identity": "Identité",
+      "contact": "Contact",
+      "company": "Entreprise",
+      "address": "Adresse",
+      "personalization": "Personnalisation visuelle"
+    },
+    "fields": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "companyName": "Société",
+      "address": "Adresse complète",
+      "accentColor": "Couleur de l'icône"
+    },
+    "helper": {
+      "email": "L'email ne peut être modifié qu'en contactant le support.",
+      "updated": "Modifications sauvegardées (mock).",
+      "color": "Choisis la teinte appliquée à l'icône lorsque l'image n'est pas fournie."
+    },
+    "cta": {
+      "save": "Enregistrer",
+      "back": "Retour au tableau de bord",
+      "uploadPhoto": "Télécharger une photo",
+      "removePhoto": "Retirer la photo"
+    }
+  },
+  "franchiseTerms": {
+    "title": "Conditions de franchise",
+    "subtitle": "Synthèse officielle issue de GET /franchise-terms.",
+    "fields": {
+      "version": "Version",
+      "entryFee": "Droit d’entrée",
+      "royalty": "Redevance",
+      "supplyRule": "Règle supply",
+      "content": "Résumé complet"
+    },
+    "cta": {
+      "back": "Retour",
+      "dashboard": "Retour au tableau de bord"
+    }
+  },
+  "franchiseApplications": {
+    "title": "Candidatures franchise",
+    "subtitle": "Suis chaque demande, vérifie les statuts et marque le paiement avant l’intégration API complète.",
+    "cta": {
+      "new": "Nouvelle candidature",
+      "refresh": "Rafraîchir",
+      "markPayment": "Marquer le paiement"
+    },
+    "table": {
+      "headers": {
+        "id": "ID",
+        "status": "Statut",
+        "paid": "Paiement",
+        "paymentMethod": "Méthode",
+        "paymentRef": "Référence",
+        "createdAt": "Créée le",
+        "updatedAt": "Mise à jour",
+        "actions": "Actions"
+      }
+    },
+    "badges": {
+      "paid": "Payée",
+      "unpaid": "Impayée"
+    },
+    "paymentMethods": {
+      "CASH": "Espèces",
+      "CARD": "Carte",
+      "BANK_TRANSFER": "Virement"
+    },
+    "messages": {
+      "empty": "Aucune candidature pour l’instant.",
+      "created": "Candidature enregistrée (mock).",
+      "paymentUpdated": "Statut de paiement mis à jour (mock)."
+    },
+    "create": {
+      "title": "Déposer une candidature",
+      "noteLabel": "Note de motivation",
+      "notePlaceholder": "Explique ton projet, ta zone cible ou la date de lancement visée.",
+      "submit": "Envoyer",
+      "cancel": "Annuler",
+      "validation": {
+        "noteRequired": "Merci de saisir une note."
+      }
+    },
+    "payment": {
+      "title": "Mise à jour paiement",
+      "paidSwitch": "Candidature réglée",
+      "methodLabel": "Méthode de paiement",
+      "methodPlaceholder": "Choisir une méthode",
+      "refLabel": "Référence (optionnel)",
+      "helper": "Méthodes autorisées (DTO PaymentMethod) : CASH, CARD, BANK_TRANSFER.",
+      "submit": "Mettre à jour",
+      "cancel": "Annuler",
+      "validation": {
+        "methodRequired": "Choisir une méthode quand la candidature est marquée comme payée."
+      }
+    }
+  },
+  "warehouses": {
+    "title": "Entrepôts & stock",
+    "subtitle": "Données mockées équivalentes à GET /warehouses et GET /warehouses/{id}/inventory-items.",
+    "cta": {
+      "back": "Retour au tableau de bord",
+      "viewStock": "Voir le stock",
+      "close": "Fermer"
+    },
+    "table": {
+      "headers": {
+        "name": "Entrepôt",
+        "address": "Adresse",
+        "phone": "Téléphone",
+        "actions": "Actions"
+      }
+    },
+    "inventory": {
+      "title": "Stock disponible",
+      "empty": "Aucun article pour cet entrepôt.",
+      "headers": {
+        "name": "Article",
+        "unit": "Unité",
+        "quantity": "Disponible"
+      }
+    }
+  },
+  "supplyOrders": {
+    "title": "Commandes d’approvisionnement",
+    "subtitle": "Écrans connectés alignés sur les endpoints GET/POST/PATCH (SupplyOrder + SupplyOrderItem).",
+    "cta": {
+      "back": "Retour au tableau de bord",
+      "new": "Nouvelle commande",
+      "refresh": "Rafraîchir",
+      "manageItems": "Gérer les lignes",
+      "updateMeta": "Mettre à jour"
+    },
+    "table": {
+      "headers": {
+        "code": "Commande",
+        "status": "Statut",
+        "warehouse": "Entrepôt",
+        "paid": "Paiement",
+        "updatedAt": "Mise à jour",
+        "actions": "Actions"
+      }
+    },
+    "statuses": {
+      "DRAFT": "Brouillon",
+      "CONFIRMED": "Confirmée",
+      "READY": "Prête",
+      "COLLECTED": "Collectée"
+    },
+    "payment": {
+      "paid": "Payée",
+      "unpaid": "Impayée"
+    },
+    "create": {
+      "title": "Créer une commande",
+      "warehouseLabel": "Entrepôt de retrait",
+      "warehousePlaceholder": "Choisir un entrepôt",
+      "noteLabel": "Note interne (optionnel)",
+      "submit": "Créer",
+      "cancel": "Annuler",
+      "validation": {
+        "warehouseRequired": "Merci de choisir un entrepôt avant de créer la commande."
+      },
+      "success": "Commande créée."
+    },
+    "items": {
+      "title": "Gérer les lignes",
+      "empty": "Aucune ligne pour le moment.",
+      "headers": {
+        "name": "Article",
+        "unit": "Unité",
+        "quantity": "Quantité"
+      },
+      "loadError": "Impossible de charger les lignes pour cette commande.",
+      "noWarehouse": "Assigne un entrepôt de retrait avant d'ajouter des lignes.",
+      "inventoryFallback": "Article #{{id}}",
+      "add": {
+        "inventoryLabel": "Article entrepôt",
+        "inventoryPlaceholder": "Choisir un article",
+        "quantityLabel": "Quantité",
+        "submit": "Ajouter",
+        "validation": {
+          "inventoryRequired": "Choisir un article dans la liste.",
+          "quantityPositive": "La quantité doit être supérieure à 0."
+        }
+      },
+      "update": {
+        "quantityLabel": "Quantité"
+      },
+      "success": "Lignes mises à jour."
+    },
+    "metadata": {
+      "title": "Mettre à jour la commande",
+      "statusLabel": "Statut",
+      "warehouseLabel": "Entrepôt de retrait",
+      "paymentSwitch": "Commande réglée",
+      "paymentMethodLabel": "Méthode de paiement",
+      "paymentRefLabel": "Référence",
+      "paymentMethodPlaceholder": "Choisir une méthode",
+      "submit": "Enregistrer",
+      "cancel": "Annuler",
+      "validation": {
+        "warehouseRequired": "Sélectionner un entrepôt.",
+        "paymentMethodRequired": "Choisir une méthode lorsque la commande est payée."
+      },
+      "success": "Commande mise à jour.",
+      "availability": {
+        "helper": "Seuls les entrepôts avec assez de stock restent sélectionnables.",
+        "loading": "Vérification de la disponibilité des entrepôts…",
+        "fetchError": "Impossible de vérifier la disponibilité pour le moment.",
+        "sufficient": "Stock OK",
+        "insufficient": "Stock insuffisant",
+        "unavailable": "Non disponible",
+        "none": "Aucun entrepôt ne couvre encore les quantités demandées."
+      }
+    },
+    "messages": {
+      "empty": "Aucune commande d’approvisionnement pour l’instant.",
+      "refresh": "Liste rafraîchie.",
+      "fetchError": "Impossible de charger les commandes. Réessaie plus tard.",
+      "actionError": "L’action a échoué. Merci de réessayer."
+    }
+  },
+  "appointments": {
+    "title": "Rendez-vous",
+    "subtitle": "Écran connecté aligné sur GET/POST/PATCH /appointments (cf. doc/endpoints.md).",
+    "cta": {
+      "back": "Retour au tableau de bord",
+      "new": "Planifier un rendez-vous",
+      "refresh": "Rafraîchir",
+      "edit": "Éditer"
+    },
+    "table": {
+      "headers": {
+        "type": "Type",
+        "warehouse": "Entrepôt",
+        "link": "Lien",
+        "datetime": "Date & heure",
+        "status": "Statut",
+        "actions": "Actions"
+      }
+    },
+    "typeOptions": {
+      "SUPPLY_PICKUP": "Retrait approvisionnement",
+      "TRUCK_PICKUP": "Retrait camion"
+    },
+    "statusOptions": {
+      "SCHEDULED": "Planifié",
+      "COMPLETED": "Réalisé",
+      "CANCELLED": "Annulé"
+    },
+    "messages": {
+      "empty": "Aucun rendez-vous pour l’instant.",
+      "created": "Rendez-vous créé.",
+      "updated": "Rendez-vous mis à jour.",
+      "fetchError": "Impossible de charger les rendez-vous. Réessaie plus tard.",
+      "createError": "Impossible de créer le rendez-vous. Merci de réessayer.",
+      "updateError": "Impossible de mettre à jour le rendez-vous. Merci de réessayer.",
+      "supplyOrderFallback": "Commande #{{id}}",
+      "truckFallback": "Camion #{{id}}"
+    },
+    "create": {
+      "title": "Planifier un rendez-vous",
+      "typeLabel": "Type",
+      "warehouseLabel": "Entrepôt",
+      "warehousePlaceholder": "Choisir un entrepôt",
+      "supplyOrderLabel": "Commande d’approvisionnement",
+      "supplyOrderPlaceholder": "Choisir une commande",
+      "truckLabel": "Camion",
+      "truckPlaceholder": "Choisir un camion",
+      "datetimeLabel": "Date & heure",
+      "submit": "Créer",
+      "cancel": "Annuler",
+      "validation": {
+        "typeRequired": "Sélectionner un type.",
+        "warehouseRequired": "Sélectionner un entrepôt.",
+        "datetimeRequired": "Renseigner la date et l’heure.",
+        "supplyOrderRequired": "Choisir une commande pour ce retrait.",
+        "truckRequired": "Choisir un camion pour ce retrait."
+      }
+    },
+    "edit": {
+      "title": "Modifier le rendez-vous",
+      "datetimeLabel": "Date & heure",
+      "statusLabel": "Statut",
+      "submit": "Enregistrer",
+      "cancel": "Annuler"
+    }
+  },
+  "menu": {
+    "title": "Menu & plats",
+    "subtitle": "Reproduit POST/GET/PATCH de MenusResource (doc/endpoints.md) pour piloter le statut du menu et le CRUD des MenuItem en mock.",
+    "cta": {
+      "back": "Retour au tableau de bord",
+      "refresh": "Rafraîchir la liste",
+      "createMenu": "Créer un menu",
+      "publish": "Publier le menu",
+      "unpublish": "Repasser en brouillon"
+    },
+    "summary": {
+      "title": "Statut du menu",
+      "statusLabel": "Statut actuel",
+      "updatedAt": "Mis à jour le {{date}}",
+      "helper": "PATCH /menus/me permet de basculer entre Brouillon et Publié."
+    },
+    "statuses": {
+      "DRAFT": "Brouillon",
+      "PUBLISHED": "Publié"
+    },
+    "chips": {
+      "available": "Disponible",
+      "unavailable": "Indisponible"
+    },
+    "items": {
+      "title": "Plats du menu",
+      "empty": "Aucun plat pour le moment.",
+      "headers": {
+        "name": "Plat",
+        "priceCash": "Prix €",
+        "pointsPrice": "Prix points",
+        "available": "Disponible",
+        "actions": "Actions"
+      }
+    },
+    "create": {
+      "title": "Ajouter un plat",
+      "inventoryLabel": "Ingrédient entrepôt",
+      "inventoryPlaceholder": "Choisir un ingrédient",
+      "inventoryLoading": "Chargement des ingrédients…",
+      "inventoryEmpty": "Aucun ingrédient disponible.",
+      "alreadyInMenu": "Déjà dans le menu",
+      "nameLabel": "Nom",
+      "priceLabel": "Prix (EUR)",
+      "pointsLabel": "Prix fidélité (optionnel)",
+      "availableLabel": "Disponible à la vente",
+      "submit": "Ajouter"
+    },
+    "edit": {
+      "title": "Modifier un plat",
+      "submit": "Enregistrer",
+      "cancel": "Annuler"
+    },
+    "actions": {
+      "edit": "Modifier",
+      "enable": "Marquer disponible",
+      "disable": "Marquer indisponible",
+      "delete": "Supprimer"
+    },
+    "validation": {
+      "name": "Merci de saisir un nom.",
+      "price": "Le prix doit être supérieur à 0.",
+      "points": "Le prix points doit être supérieur à 0.",
+      "inventory": "Sélectionne un ingrédient d'entrepôt avant d'ajouter le plat."
+    },
+    "messages": {
+      "menuMissing": "Crée un menu avant de gérer les plats.",
+      "menuCreated": "Menu créé.",
+      "menuCreateError": "Impossible de créer le menu pour l'instant.",
+      "statusUpdated": "Statut du menu mis à jour.",
+      "statusUpdateError": "Impossible de mettre à jour le statut du menu.",
+      "itemsRefreshed": "Menu actualisé.",
+      "fetchError": "Impossible de charger le menu pour le moment.",
+      "itemsFetchError": "Impossible de charger les plats du menu.",
+      "inventoryFetchError": "Impossible de charger les ingrédients des entrepôts.",
+      "itemCreated": "Plat ajouté.",
+      "itemCreateError": "Impossible d'ajouter le plat.",
+      "itemUpdated": "Plat mis à jour.",
+      "itemUpdateError": "Impossible de mettre à jour le plat.",
+      "itemDeleted": "Plat supprimé.",
+      "itemDeleteError": "Impossible de supprimer le plat.",
+      "availabilityUpdated": "Disponibilité mise à jour.",
+      "availabilityUpdateError": "Impossible de mettre à jour la disponibilité."
+    }
+  }
+}
