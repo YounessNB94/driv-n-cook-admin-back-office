@@ -13,12 +13,14 @@ import {
   FranchiseTerms,
   Franchisee,
   FranchiseePatch,
+  FranchiseeLoginRequest,
   Incident,
-  IncidentCreatePayload,
   IncidentPatch,
+  IncidentCreatePayload,
   InventoryItem,
   LoyaltyCard,
   MaintenanceRecord,
+  MaintenanceRecordCreatePayload,
   Menu,
   MenuItem,
   MenuItemCreate,
@@ -33,9 +35,81 @@ import {
   SupplyOrderPatch,
   SupplyOrderStatus,
   Truck,
+  TruckCreatePayload,
+  TruckPatch,
   Warehouse,
   WarehouseAvailability,
+  WarehouseInventoryItemPatch,
+  WarehouseInventoryItemCreate,
+  AuthTokenResponse,
+  FranchiseeRegistration,
+  AdminFranchiseeDetail,
+  AdminFranchiseApplication,
+  AdminFranchiseApplicationDetail,
+  FranchiseApplicationStatus,
 } from '../types/api';
+
+const downloadReport = async (payload: ReportRequest, path: string) => {
+  const response = await fetch(buildApiUrl(path), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: buildJsonBody(payload),
+  });
+  if (!response.ok) {
+    throw new ApiError('Failed to request report', response.status);
+  }
+  const blob = await response.blob();
+  const disposition = response.headers.get('Content-Disposition');
+  let fileName: string | undefined;
+  if (disposition) {
+    const match = disposition.match(/filename="?([^";]+)"?/i);
+    if (match?.[1]) {
+      fileName = match[1];
+    }
+  }
+  return { blob, fileName };
+};
+
+export const authApi = {
+  login: (payload: FranchiseeLoginRequest) =>
+    apiRequest<AuthTokenResponse>({
+      path: '/auth/login',
+      method: 'POST',
+      body: buildJsonBody(payload),
+    }),
+  signup: (payload: FranchiseeRegistration) =>
+    apiRequest<AuthTokenResponse>({
+      path: '/auth/signup',
+      method: 'POST',
+      body: buildJsonBody(payload),
+    }),
+};
+
+export const adminFranchiseesApi = {
+  list: () => apiRequest<Franchisee[]>({ path: '/franchisees' }),
+  getById: (franchiseeId: number) => apiRequest<AdminFranchiseeDetail>({ path: `/franchisees/${franchiseeId}` }),
+};
+
+export const adminFranchiseApplicationsApi = {
+  list: (status: FranchiseApplicationStatus = 'PENDING') => {
+    const params = new URLSearchParams({ status });
+    return apiRequest<AdminFranchiseApplication[]>({ path: `/franchise-applications/admin?${params.toString()}` });
+  },
+  getById: (applicationId: number) =>
+    apiRequest<AdminFranchiseApplicationDetail>({ path: `/franchise-applications/${applicationId}` }),
+  updateStatus: (applicationId: number, status: FranchiseApplicationStatus) =>
+    apiRequest<AdminFranchiseApplicationDetail>({
+      path: `/franchise-applications/admin/${applicationId}/status`,
+      method: 'PATCH',
+      body: buildJsonBody({ status }),
+    }),
+  updatePayment: (applicationId: number, payload: FranchiseApplicationPatch) =>
+    apiRequest<AdminFranchiseApplicationDetail>({
+      path: `/franchise-applications/${applicationId}`,
+      method: 'PATCH',
+      body: buildJsonBody(payload),
+    }),
+};
 
 export const franchiseeApi = {
   getCurrent: () => apiRequest<Franchisee>({ path: '/franchisees/me' }),
@@ -71,6 +145,18 @@ export const warehousesApi = {
   list: () => apiRequest<Warehouse[]>({ path: '/warehouses' }),
   inventory: (warehouseId: number) =>
     apiRequest<InventoryItem[]>({ path: `/warehouses/${warehouseId}/inventory-items` }),
+  updateInventoryItem: (warehouseId: number, itemId: number, payload: WarehouseInventoryItemPatch) =>
+    apiRequest<InventoryItem>({
+      path: `/warehouses/${warehouseId}/inventory-items/${itemId}`,
+      method: 'PATCH',
+      body: buildJsonBody(payload),
+    }),
+  createInventoryItem: (warehouseId: number, payload: WarehouseInventoryItemCreate) =>
+    apiRequest<InventoryItem>({
+      path: `/warehouses/${warehouseId}/inventory-items`,
+      method: 'POST',
+      body: buildJsonBody(payload),
+    }),
   availability: (supplyOrderId: number) =>
     apiRequest<WarehouseAvailability[]>({ path: `/warehouses/availability?supplyOrderId=${supplyOrderId}` }),
 };
@@ -130,6 +216,18 @@ export const appointmentsApi = {
       method: 'PATCH',
       body: buildJsonBody(payload),
     }),
+};
+
+export const adminAppointmentsApi = {
+  list: (params?: { from?: string; to?: string; type?: AppointmentType; warehouseId?: number }) => {
+    const query = new URLSearchParams();
+    if (params?.from) query.append('from', params.from);
+    if (params?.to) query.append('to', params.to);
+    if (params?.type) query.append('type', params.type);
+    if (params?.warehouseId) query.append('warehouseId', String(params.warehouseId));
+    const suffix = query.size > 0 ? `?${query.toString()}` : '';
+    return apiRequest<Appointment[]>({ path: `/appointments${suffix}` });
+  },
 };
 
 export const menuApi = {
@@ -211,30 +309,11 @@ export const revenuesApi = {
 };
 
 export const reportsApi = {
-  requestMyReport: async (
-    payload: ReportRequest,
-  ): Promise<{ blob: Blob; fileName?: string | undefined }> => {
-    const response = await fetch(buildApiUrl('/reports/me'), {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: buildJsonBody(payload),
-    });
-    if (!response.ok) {
-      throw new ApiError('Failed to request report', response.status);
-    }
-    const blob = await response.blob();
-    const disposition = response.headers.get('Content-Disposition');
-    let fileName: string | undefined;
-    if (disposition) {
-      const match = disposition.match(/filename="?([^";]+)"?/i);
-      if (match?.[1]) {
-        fileName = match[1];
-      }
-    }
-    return { blob, fileName };
-  },
+  requestMyReport: (payload: ReportRequest) => downloadReport(payload, '/reports/me'),
+};
+
+export const adminReportsApi = {
+  requestReport: (payload: ReportRequest) => downloadReport(payload, '/reports'),
 };
 
 export const trucksApi = {
@@ -247,4 +326,31 @@ export const trucksApi = {
   getIncident: (incidentId: number) => apiRequest<Incident>({ path: `/incidents/${incidentId}` }),
   getMaintenanceRecords: (truckId: number) =>
     apiRequest<MaintenanceRecord[]>({ path: `/trucks/${truckId}/maintenance-records` }),
+  getById: (truckId: number) => apiRequest<Truck>({ path: `/trucks/${truckId}` }),
+};
+
+export const adminTrucksApi = {
+  list: () => apiRequest<Truck[]>({ path: '/trucks' }),
+  create: (payload: TruckCreatePayload) =>
+    apiRequest<Truck>({ path: '/trucks', method: 'POST', body: buildJsonBody(payload) }),
+  update: (truckId: number, payload: TruckPatch) =>
+    apiRequest<Truck>({ path: `/trucks/${truckId}`, method: 'PATCH', body: buildJsonBody(payload) }),
+};
+
+export const adminSupplyOrdersApi = {
+  listConfirmed: () =>
+    apiRequest<SupplyOrder[]>({ path: '/supply-orders?status=CONFIRMED' }),
+  update: (orderId: number, payload: SupplyOrderPatch) =>
+    apiRequest<SupplyOrder>({ path: `/supply-orders/${orderId}`, method: 'PATCH', body: buildJsonBody(payload) }),
+};
+
+export const adminIncidentsApi = {
+  list: () => apiRequest<Incident[]>({ path: '/incidents' }),
+  resolve: (incidentId: number, payload: IncidentPatch) =>
+    apiRequest<Incident>({ path: `/incidents/${incidentId}`, method: 'PATCH', body: buildJsonBody(payload) }),
+};
+
+export const adminMaintenanceApi = {
+  create: (truckId: number, payload: MaintenanceRecordCreatePayload) =>
+    apiRequest<MaintenanceRecord>({ path: `/trucks/${truckId}/maintenance-records`, method: 'POST', body: buildJsonBody(payload) }),
 };

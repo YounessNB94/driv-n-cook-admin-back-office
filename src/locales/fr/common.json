@@ -6,7 +6,7 @@
     "ctaPrimary": "Créer mon compte",
     "ctaSecondary": "Déjà franchisé ? Connexion"
   },
-      "confirmationHelper": "La commande est créée en brouillon sans entrepôt. Ajoute les articles puis choisis l'entrepôt lors de la validation.",
+  "confirmationHelper": "La commande est créée en brouillon sans entrepôt. Ajoute les articles puis choisis l'entrepôt lors de la validation.",
   "navigation": {
     "home": "Accueil",
     "presentation": "Qui sommes-nous",
@@ -19,16 +19,18 @@
     "logout": "Déconnexion",
     "menu": "Menu",
     "dashboard": "Tableau de bord",
-    "backOffice": "Back office",
-    "language": "Langue"
+    "language": "Langue",
+    "backOffice": "Back office"
   },
   "auth": {
     "signup": {
       "title": "Demander un accès franchise",
       "subtitle": "Partage ces informations et nous finaliserons ton onboarding dès que l'authentification sera ouverte.",
       "messages": {
-        "pendingApi": "Les endpoints d'authentification sont encore en construction. L'envoi du formulaire conserve les données uniquement en local pour l'instant.",
-        "success": "Merci ! Tes informations sont enregistrées localement (mock). Le siège te recontactera dès que le flux sécurisé sera prêt."
+        "success": "Compte créé ! Tu peux maintenant commencer à explorer ton espace franchisé.",
+        "errorGeneric": "Impossible de finaliser l'inscription. Réessaie dans un instant.",
+        "errorValidation": "Certaines informations sont invalides. Vérifie le formulaire.",
+        "pendingApi": "Les endpoints d'authentification sont encore en construction. L'envoi du formulaire conserve les données uniquement en local pour l'instant."
       },
       "fields": {
         "firstName": { "label": "Prénom", "placeholder": "Sarah" },
@@ -46,6 +48,7 @@
       },
       "cta": {
         "submit": "Envoyer ma demande",
+        "loading": "Création en cours...",
         "back": "Retour à l'accueil",
         "haveAccount": "Déjà inscrit ? Retour à l'accueil"
       },
@@ -56,8 +59,372 @@
         "maxLength": "Maximum {{count}} caractères.",
         "passwordMatch": "Les mots de passe doivent correspondre."
       }
+    },
+    "login": {
+      "title": "Connexion Administrateur",
+      "messages": {
+        "errorInvalid": "Email ou mot de passe incorrect.",
+        "errorGeneric": "Impossible de te connecter pour le moment. Réessaie dans un instant."
+      },
+      "fields": {
+        "email": { "label": "Email", "placeholder": "toi@exemple.com" },
+        "password": { "label": "Mot de passe", "placeholder": "Ton mot de passe" }
+      },
+      "cta": {
+        "submit": "Se connecter",
+        "loading": "Connexion...",
+        "back": "Retour à l'accueil",
+        "goSignup": "Pas encore de compte ? Inscris-toi"
+      },
+      "validation": {
+        "required": "Champ obligatoire.",
+        "email": "Renseigne un email valide.",
+        "maxLength": "Maximum {{count}} caractères.",
+        "passwordLength": "Utilise au moins {{count}} caractères."
+      }
     }
   },
+    "backoffice": {
+    "common": {
+      "backToDashboard": "Retour au tableau de bord"
+    },
+    "dashboard": {
+      "title": "Tableau de bord admin",
+      "subtitle": "Gardez un œil sur les incidents camions, les commandes supply et les prochains rendez-vous réseau.",
+      "loading": "Chargement de la vue globale...",
+      "summary": {
+        "title": "En un coup d’œil",
+        "incidents": {
+          "title": "Incidents camions",
+          "value": "{{count}} ouverts ou en cours",
+          "helper": "Ouverts : {{open}} · En cours : {{inProgress}}",
+          "action": "Voir les incidents"
+        },
+        "supply": {
+          "title": "Orders supply confirmés",
+          "value": "{{count}} en attente",
+          "helper": "Filtre sur le statut CONFIRMED",
+          "action": "Aller aux supply orders"
+        },
+        "appointments": {
+          "title": "Prochain rendez-vous",
+          "value": "{{date}}",
+          "empty": "Aucun rendez-vous prévu",
+          "helper": "Entrepôt : {{warehouse}}",
+          "helperEmpty": "Pas de rendez-vous à venir",
+          "action": "Voir les rendez-vous"
+        }
+      },
+      "quickLinks": {
+        "title": "Raccourcis"
+      },
+      "links": {
+        "franchisees": "Franchisés",
+        "applications": "Candidatures",
+        "trucks": "Camions",
+        "warehouses": "Entrepôts",
+        "supplyOrders": "Supply orders",
+        "appointments": "Rendez-vous",
+        "incidents": "Incidents",
+        "reports": "Rapports"
+      },
+      "errors": {
+        "load": "Impossible de charger les données du tableau de bord."
+      }
+    },
+    "franchisees": {
+      "title": "Franchisés",
+      "subtitle": "Visualise chaque profil et ouvre la fiche détaillée en un clic.",
+      "columns": {
+        "name": "Nom",
+        "email": "Email",
+        "company": "Société",
+        "phone": "Téléphone",
+        "createdAt": "Arrivée",
+        "actions": "Actions"
+      },
+      "actions": {
+        "viewProfile": "Voir le profil"
+      },
+      "detail": {
+        "title": "Profil franchisé",
+        "identity": "Identité",
+        "company": "Entreprise",
+        "preferences": "Préférences visuelles",
+        "accentColor": "Couleur d’accent : {{color}}"
+      },
+      "emptyState": "Aucun franchisé à afficher.",
+      "loadError": "Impossible de charger les franchisés. Réessaie dans un instant.",
+      "detailError": "Impossible d’afficher ce profil pour l’instant."
+    },
+    "franchiseApplications": {
+      "title": "Candidatures franchisés",
+      "subtitle": "Suivre les demandes en attente, vérifier le paiement et décider en un seul écran.",
+      "loading": "Chargement des candidatures...",
+      "loadingDetail": "Chargement de la candidature...",
+      "emptyState": "Aucune candidature pour ce filtre.",
+      "filters": {
+        "search": "Recherche",
+        "searchPlaceholder": "Nom ou email",
+        "status": "Statut"
+      },
+      "table": {
+        "columns": {
+          "id": "ID",
+          "candidate": "Candidat",
+          "email": "Email",
+          "createdAt": "Soumise le",
+          "paid": "status paiement",
+          "actions": "Actions"
+        }
+      },
+      "actions": {
+        "viewDetail": "Voir le détail",
+        "approve": "Valider",
+        "reject": "Refuser"
+      },
+      "detail": {
+        "title": "Détail candidature",
+        "subtitle": "Candidature #{{id}}",
+        "infoSection": "Informations",
+        "candidateSection": "Candidat",
+        "paymentSection": "Paiement",
+        "note": "Note",
+        "createdAt": "Soumise le",
+        "updatedAt": "Mis à jour le",
+        "paid": "Payée",
+        "paymentMethod": "Mode de paiement"
+      },
+      "badges": {
+        "paid": "Payée",
+        "unpaid": "Non payée"
+      },
+      "dialog": {
+        "approveTitle": "Valider cette candidature",
+        "approveMessage": "Le candidat sera marqué comme approuvé.",
+        "rejectTitle": "Refuser cette candidature",
+        "rejectMessage": "Le candidat sera informé du refus.",
+        "confirm": "Confirmer"
+      },
+      "errors": {
+        "load": "Impossible de charger les candidatures.",
+        "loadDetail": "Impossible de charger cette candidature.",
+        "updateStatus": "Impossible de mettre à jour le statut.",
+        "invalidId": "Identifiant de candidature invalide."
+      }
+    },
+    "trucks": {
+      "title": "Parc camions",
+      "subtitle": "Supervise tous les camions, leur affectation et crée-en de nouveaux.",
+      "loading": "Chargement des camions...",
+      "empty": "Aucun camion enregistré pour l’instant.",
+      "actions": {
+        "newTruck": "Nouveau camion",
+        "unassign": "Retirer"
+      },
+      "assign": {
+        "placeholder": "Assigner un franchisé"
+      },
+      "table": {
+        "plate": "Immatriculation",
+        "name": "Nom",
+        "status": "Statut",
+        "warehouse": "Entrepôt",
+        "assigned": "Franchisé",
+        "actions": "Actions"
+      },
+      "status": {
+        "ASSIGNED": "Assigné",
+        "IN_SERVICE": "En service",
+        "IN_REPAIR": "En maintenance",
+        "unknown": "Inconnu"
+      },
+      "warehouse": {
+        "unassigned": "Aucun entrepôt"
+      },
+      "assignedLabel": "Franchisé #{{id}}",
+      "create": {
+        "title": "Créer un camion",
+        "plate": "Immatriculation",
+        "name": "Nom d’affichage",
+        "status": "Statut",
+        "warehouse": "Entrepôt",
+        "submit": "Créer",
+        "validation": {
+          "required": "Immatriculation et entrepôt sont requis."
+        }
+      }
+    },
+    "supplyOrders": {
+      "title": "Commandes d’approvisionnement",
+      "subtitle": "Surveille les commandes confirmées, le paiement et bascule-les en READY.",
+      "loading": "Chargement des commandes...",
+      "empty": "Aucune commande confirmée pour l’instant.",
+      "badges": {
+        "paid": "Payée",
+        "unpaid": "Non payée"
+      },
+      "actions": {
+        "markReady": "Passer en READY"
+      },
+      "table": {
+        "franchisee": "Franchisé",
+        "code": "Code",
+        "warehouse": "Entrepôt",
+        "paid": "Payée ?",
+        "amount": "Montant",
+        "updatedAt": "Dernière mise à jour",
+        "actions": "Actions"
+      },
+      "errors": {
+        "load": "Impossible de charger les commandes.",
+        "update": "Impossible de mettre à jour cette commande."
+      }
+    },
+    "appointments": {
+      "title": "Rendez-vous réseau",
+      "subtitle": "Vue consolidée des créneaux supply/camion avec filtres globaux.",
+      "loading": "Chargement des rendez-vous...",
+      "empty": "Aucun rendez-vous pour ces filtres.",
+      "filters": {
+        "from": "Du",
+        "to": "Au",
+        "type": "Type",
+        "warehouse": "Entrepôt"
+      },
+      "table": {
+        "datetime": "Date & heure",
+        "type": "Type",
+        "warehouse": "Entrepôt",
+        "franchisee": "Franchisé",
+        "link": "Lien",
+        "status": "Statut"
+      },
+      "links": {
+        "supply": "Commande supply #{{id}}",
+        "truck": "Camion #{{id}}"
+      },
+      "errors": {
+        "load": "Impossible de charger les rendez-vous."
+      }
+    },
+    "incidents": {
+      "title": "Incidents camions & maintenance",
+      "subtitle": "Consulte chaque incident et clôture-les avec une trace de maintenance.",
+      "loading": "Chargement des incidents...",
+      "empty": "Aucun incident à afficher.",
+      "errors": {
+        "load": "Impossible de charger les incidents.",
+        "resolve": "Impossible de résoudre cet incident."
+      },
+      "table": {
+        "id": "Incident",
+        "truck": "Camion",
+        "unknownTruck": "Camion inconnu",
+        "franchisee": "Franchisé",
+        "description": "Description",
+        "status": "Statut",
+        "date": "Date",
+        "actions": "Actions"
+      },
+      "status": {
+        "OPEN": "Ouvert",
+        "IN_PROGRESS": "En cours",
+        "RESOLVED": "Résolu"
+      },
+      "actions": {
+        "resolve": "Résoudre"
+      },
+      "dialog": {
+        "title": "Créer un enregistrement de maintenance",
+        "fields": {
+          "date": "Date de maintenance",
+          "description": "Description de la maintenance"
+        },
+        "errors": {
+          "date": "Indique une date de maintenance.",
+          "description": "Décris l’intervention réalisée."
+        },
+        "cta": "Confirmer la résolution"
+      }
+    },
+    "warehouses": {
+      "title": "Entrepôts réseau",
+      "subtitle": "Visualise le stock et relance les réassorts pour l’ensemble du réseau.",
+      "loading": "Chargement des entrepôts...",
+      "empty": "Aucun entrepôt à afficher.",
+      "errors": {
+        "load": "Impossible de charger les entrepôts.",
+        "inventory": "Impossible de charger le stock de cet entrepôt.",
+        "restock": "Impossible de mettre à jour le stock.",
+        "generic": "Une erreur est survenue."
+      },
+      "table": {
+        "name": "Nom",
+        "address": "Adresse",
+        "phone": "Téléphone",
+        "actions": "Actions"
+      },
+      "actions": {
+        "viewStock": "Voir le stock",
+        "restock": "Réapprovisionner",
+        "createStock": "Créer un article"
+      },
+      "drawer": {
+        "subtitle": "Vue inventaire",
+        "loading": "Chargement de l’inventaire...",
+        "empty": "Aucun article pour cet entrepôt.",
+        "itemSubtitle": "Article #{{id}}"
+      },
+      "restock": {
+        "titleUpdate": "Mettre à jour la quantité",
+        "titleCreate": "Créer un article d’inventaire",
+        "fields": {
+          "name": "Nom de l’article",
+          "unit": "Unité",
+          "quantity": "Quantité"
+        },
+        "ctaUpdate": "Mettre à jour",
+        "ctaCreate": "Créer",
+        "errors": {
+          "quantity": "Indique une quantité valide.",
+          "generic": "Impossible d’enregistrer cette modification."
+        }
+      }
+    },
+    "adminReports": {
+      "title": "Rapports multi-franchisés",
+      "subtitle": "Déclenche un téléchargement pour n’importe quel franchisé du réseau.",
+      "helper": "Sélectionne un franchisé et récupère le rapport consolidé des 7 derniers jours.",
+      "fields": {
+        "franchisee": "Franchisé"
+      },
+      "placeholders": {
+        "franchisee": "Choisir un franchisé"
+      },
+      "actions": {
+        "generate": "Générer le rapport",
+        "generating": "Génération..."
+      },
+      "validation": {
+        "franchisee": "Sélectionne un franchisé avant de générer un rapport."
+      },
+      "messages": {
+        "success": "Téléchargement lancé."
+      },
+      "errors": {
+        "loadFranchisees": "Impossible de charger la liste des franchisés.",
+        "generate": "Impossible de générer le rapport."
+      }
+    }
+  },
+    "common": {
+    "refresh": "Rafraîchir",
+    "change": "Modifier",
+    "rowsPerPage": "Lignes par page",
+    "notProvided": "Non communiqué",
+    "back": "Retour"
+    },
   "landing": {
     "hero": {
       "title": "Driv’n Cook",
@@ -270,137 +637,137 @@
       "menuItemsError": "Impossible de charger les plats pour le filtre."
     }
   },
-    "customerOrders": {
-      "title": "Commandes clients",
-      "subtitle": "Exploite GET /customer-orders, POST /customer-orders, PATCH /customer-orders/{orderId} et POST /customer-orders/{orderId}/items directement via l’API.",
-      "cta": {
-        "back": "Retour au tableau de bord",
-        "refresh": "Rafraîchir",
-        "create": "Créer la commande",
-        "newOrder": "Nouvelle commande",
-        "select": "Gérer cette commande",
-        "clear": "Fermer la sélection",
-        "addItem": "Ajouter un article",
-        "removeItem": "Supprimer",
-        "updateStatus": "Mettre à jour",
-        "markReady": "Passer en prête",
-        "cancel": "Annuler"
-      },
-      "creation": {
-        "title": "Nouvelle commande",
-        "description": "Précise le type de commande et, si besoin, rattache une carte fidélité; la page envoie POST /customer-orders.",
-        "typeLabel": "Type de commande",
-        "typePlaceholder": "Choisir un type",
-        "loyaltyLabel": "Carte fidélité (optionnel)",
-        "loyaltyPlaceholder": "Sélectionner une carte",
-        "submit": "Créer",
-        "validation": {
-          "type": "Merci de choisir un type de commande."
-        }
-      },
-      "items": {
-        "title": "Lignes de commande",
-        "description": "POST /customer-orders/{orderId}/items attend un menuItemId et une quantité.",
-        "helper": "Sélectionne une commande pour gérer ses lignes.",
-        "menuItemLabel": "Plat",
-        "menuItemPlaceholder": "Choisir un plat",
-        "quantityLabel": "Quantité",
-        "quantityPlaceholder": "Qté",
-        "submit": "Ajouter la ligne",
-        "validation": {
-          "menuItem": "Choisis un plat avant d’ajouter une ligne.",
-          "quantity": "Saisis une quantité supérieure à 0."
-        },
-        "table": {
-          "title": "Lignes en cours",
-          "headers": {
-            "item": "Plat",
-            "quantity": "Qté",
-            "total": "Total",
-            "actions": "Actions"
-          },
-          "empty": "Aucune ligne pour le moment."
-        },
-        "loading": "Chargement des lignes..."
-      },
-      "status": {
-        "title": "Statut & paiement",
-        "description": "PATCH /customer-orders/{orderId} permet d’ajuster le statut et/ou le paiement.",
-        "statusLabel": "Statut",
-        "statusPlaceholder": "Choisir un statut",
-        "paidLabel": "Commande réglée",
-        "paymentMethodLabel": "Méthode de paiement",
-        "paymentMethodPlaceholder": "Choisir une méthode",
-        "submit": "Mettre à jour",
-        "validation": {
-          "status": "Choisis un statut avant de valider.",
-          "paymentMethod": "Sélectionne une méthode si la commande est marquée comme réglée."
-        }
-      },
-      "table": {
-        "title": "Commandes",
-        "headers": {
-          "id": "ID commande",
-          "type": "Type",
-          "status": "Statut",
-          "loyalty": "Fidélité",
-          "paid": "Payée",
-          "totals": "Totaux",
-          "updatedAt": "Mis à jour",
-          "actions": "Actions"
-        },
-        "empty": "Aucune commande à afficher pour le moment."
-      },
-      "totals": {
-        "title": "Totaux",
-        "cash": "{{amount}} €",
-        "points": "{{points}} pts"
-      },
-      "types": {
-        "ON_SITE": "Sur place",
-        "RESERVATION": "Réservation"
-      },
-      "statuses": {
-        "CREATED": "Créée",
-        "PREPARING": "En préparation",
-        "READY": "Prête",
-        "COMPLETED": "Terminée",
-        "CANCELLED": "Annulée"
-      },
-      "paymentMethods": {
-        "CASH": "Espèces",
-        "POINTS": "Points"
-      },
-      "messages": {
-        "created": "Commande créée.",
-        "items": "Ligne ajoutée.",
-        "itemRemoved": "Ligne supprimée.",
-        "statusUpdated": "Commande mise à jour.",
-        "refresh": "Données rafraîchies.",
-        "selectOrder": "Sélectionne d’abord une commande.",
-        "error": "Impossible de terminer cette action. Réessaie dans un instant.",
-        "loadError": "Impossible de charger les commandes clients. Réessaie plus tard."
-      },
-      "dialog": {
-        "currentStatus": "Statut actuel",
-        "unpaidHelper": "Marque la commande comme réglée pour activer le bouton Prête."
-      },
-      "createPage": {
-        "title": "Nouvelle commande",
-        "subtitle": "Ajoute des articles à la commande fraîchement créée puis lance la préparation.",
-        "info": {
-          "title": "Résumé de la commande"
-        },
-        "cta": {
-          "finish": "Passer en préparation",
-          "back": "Retour aux commandes"
-        },
-        "messages": {
-          "ready": "Commande envoyée en préparation.",
-          "missingOrder": "Impossible de trouver cette commande."
-        }
+  "customerOrders": {
+    "title": "Commandes clients",
+    "subtitle": "Exploite GET /customer-orders, POST /customer-orders, PATCH /customer-orders/{orderId} et POST /customer-orders/{orderId}/items directement via l’API.",
+    "cta": {
+      "back": "Retour au tableau de bord",
+      "refresh": "Rafraîchir",
+      "create": "Créer la commande",
+      "newOrder": "Nouvelle commande",
+      "select": "Gérer cette commande",
+      "clear": "Fermer la sélection",
+      "addItem": "Ajouter un article",
+      "removeItem": "Supprimer",
+      "updateStatus": "Mettre à jour",
+      "markReady": "Passer en prête",
+      "cancel": "Annuler"
+    },
+    "creation": {
+      "title": "Nouvelle commande",
+      "description": "Précise le type de commande et, si besoin, rattache une carte fidélité; la page envoie POST /customer-orders.",
+      "typeLabel": "Type de commande",
+      "typePlaceholder": "Choisir un type",
+      "loyaltyLabel": "Carte fidélité (optionnel)",
+      "loyaltyPlaceholder": "Sélectionner une carte",
+      "submit": "Créer",
+      "validation": {
+        "type": "Merci de choisir un type de commande."
       }
     },
+    "items": {
+      "title": "Lignes de commande",
+      "description": "POST /customer-orders/{orderId}/items attend un menuItemId et une quantité.",
+      "helper": "Sélectionne une commande pour gérer ses lignes.",
+      "menuItemLabel": "Plat",
+      "menuItemPlaceholder": "Choisir un plat",
+      "quantityLabel": "Quantité",
+      "quantityPlaceholder": "Qté",
+      "submit": "Ajouter la ligne",
+      "validation": {
+        "menuItem": "Choisis un plat avant d’ajouter une ligne.",
+        "quantity": "Saisis une quantité supérieure à 0."
+      },
+      "table": {
+        "title": "Lignes en cours",
+        "headers": {
+          "item": "Plat",
+          "quantity": "Qté",
+          "total": "Total",
+          "actions": "Actions"
+        },
+        "empty": "Aucune ligne pour le moment."
+      },
+      "loading": "Chargement des lignes..."
+    },
+    "status": {
+      "title": "Statut & paiement",
+      "description": "PATCH /customer-orders/{orderId} permet d’ajuster le statut et/ou le paiement.",
+      "statusLabel": "Statut",
+      "statusPlaceholder": "Choisir un statut",
+      "paidLabel": "Commande réglée",
+      "paymentMethodLabel": "Méthode de paiement",
+      "paymentMethodPlaceholder": "Choisir une méthode",
+      "submit": "Mettre à jour",
+      "validation": {
+        "status": "Choisis un statut avant de valider.",
+        "paymentMethod": "Sélectionne une méthode si la commande est marquée comme réglée."
+      }
+    },
+    "table": {
+      "title": "Commandes",
+      "headers": {
+        "id": "ID commande",
+        "type": "Type",
+        "status": "Statut",
+        "loyalty": "Fidélité",
+        "paid": "Payée",
+        "totals": "Totaux",
+        "updatedAt": "Mis à jour",
+        "actions": "Actions"
+      },
+      "empty": "Aucune commande à afficher pour le moment."
+    },
+    "totals": {
+      "title": "Totaux",
+      "cash": "{{amount}} €",
+      "points": "{{points}} pts"
+    },
+    "types": {
+      "ON_SITE": "Sur place",
+      "RESERVATION": "Réservation"
+    },
+    "statuses": {
+      "CREATED": "Créée",
+      "PREPARING": "En préparation",
+      "READY": "Prête",
+      "COMPLETED": "Terminée",
+      "CANCELLED": "Annulée"
+    },
+    "paymentMethods": {
+      "CASH": "Espèces",
+      "POINTS": "Points"
+    },
+    "messages": {
+      "created": "Commande créée.",
+      "items": "Ligne ajoutée.",
+      "itemRemoved": "Ligne supprimée.",
+      "statusUpdated": "Commande mise à jour.",
+      "refresh": "Données rafraîchies.",
+      "selectOrder": "Sélectionne d’abord une commande.",
+      "error": "Impossible de terminer cette action. Réessaie dans un instant.",
+      "loadError": "Impossible de charger les commandes clients. Réessaie plus tard."
+    },
+    "dialog": {
+      "currentStatus": "Statut actuel",
+      "unpaidHelper": "Marque la commande comme réglée pour activer le bouton Prête."
+    },
+    "createPage": {
+      "title": "Nouvelle commande",
+      "subtitle": "Ajoute des articles à la commande fraîchement créée puis lance la préparation.",
+      "info": {
+        "title": "Résumé de la commande"
+      },
+      "cta": {
+        "finish": "Passer en préparation",
+        "back": "Retour aux commandes"
+      },
+      "messages": {
+        "ready": "Commande envoyée en préparation.",
+        "missingOrder": "Impossible de trouver cette commande."
+      }
+    }
+  },
   "loyaltyCards": {
     "title": "Cartes de fidélité",
     "subtitle": "Consulte et crée les cartes via GET /loyalty-cards, POST /loyalty-cards, GET /loyalty-cards/{cardId} et GET /loyalty-cards?code=XYZ directement via l’API (voir doc/endpoints.md).",
@@ -460,20 +827,43 @@
       "helper": "Données issues de GET /trucks/me."
     },
     "incidents": {
-      "title": "Incidents",
-      "subtitle": "Derniers événements impactant le camion.",
-      "formTitle": "Déclarer un incident",
-      "descriptionLabel": "Description",
-      "descriptionPlaceholder": "ex. Alerte frigo pendant le service",
-      "submit": "Créer l’incident",
+      "title": "Incidents camion & maintenance",
+      "subtitle": "Supervise tous les incidents et clôture-les avec une trace de maintenance.",
+      "loading": "Chargement des incidents...",
+      "empty": "Aucun incident à afficher.",
+      "errors": {
+        "load": "Impossible de charger les incidents.",
+        "resolve": "Impossible de résoudre cet incident."
+      },
       "table": {
-        "headers": {
-          "description": "Description",
-          "status": "Statut",
-          "createdAt": "Créé le",
-          "actions": "Actions"
+        "id": "Incident",
+        "truck": "Camion",
+        "unknownTruck": "Camion inconnu",
+        "franchisee": "Franchisé",
+        "description": "Description",
+        "status": "Statut",
+        "date": "Date",
+        "actions": "Actions"
+      },
+      "status": {
+        "OPEN": "Ouvert",
+        "IN_PROGRESS": "En cours",
+        "RESOLVED": "Résolu"
+      },
+      "actions": {
+        "resolve": "Résoudre"
+      },
+      "dialog": {
+        "title": "Créer un enregistrement maintenance",
+        "fields": {
+          "date": "Date de maintenance",
+          "description": "Description de l'intervention"
         },
-        "empty": "Aucun incident déclaré."
+        "errors": {
+          "date": "Indique une date de maintenance.",
+          "description": "Décris l'intervention réalisée."
+        },
+        "cta": "Confirmer la résolution"
       }
     },
     "actions": {
@@ -705,28 +1095,46 @@
     }
   },
   "warehouses": {
-    "title": "Entrepôts & stock",
-    "subtitle": "Données mockées équivalentes à GET /warehouses et GET /warehouses/{id}/inventory-items.",
-    "cta": {
-      "back": "Retour au tableau de bord",
-      "viewStock": "Voir le stock",
-      "close": "Fermer"
+    "title": "Entrepôts réseau",
+    "subtitle": "Visualise le stock et relance les réassorts pour l’ensemble du réseau.",
+    "loading": "Chargement des entrepôts...",
+    "empty": "Aucun entrepôt à afficher.",
+    "errors": {
+      "load": "Impossible de charger les entrepôts.",
+      "inventory": "Impossible de charger le stock de cet entrepôt.",
+      "restock": "Impossible de mettre à jour le stock.",
+      "generic": "Une erreur est survenue."
     },
     "table": {
-      "headers": {
-        "name": "Entrepôt",
-        "address": "Adresse",
-        "phone": "Téléphone",
-        "actions": "Actions"
-      }
+      "name": "Nom",
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "actions": "Actions"
     },
-    "inventory": {
-      "title": "Stock disponible",
+    "actions": {
+      "viewStock": "Voir le stock",
+      "restock": "Réapprovisionner",
+      "createStock": "Créer un article"
+    },
+    "drawer": {
+      "subtitle": "Vue inventaire",
+      "loading": "Chargement de l’inventaire...",
       "empty": "Aucun article pour cet entrepôt.",
-      "headers": {
-        "name": "Article",
+      "itemSubtitle": "Article #{{id}}"
+    },
+    "restock": {
+      "titleUpdate": "Mettre à jour la quantité",
+      "titleCreate": "Créer un article d’inventaire",
+      "fields": {
+        "name": "Nom de l’article",
         "unit": "Unité",
-        "quantity": "Disponible"
+        "quantity": "Quantité"
+      },
+      "ctaUpdate": "Mettre à jour",
+      "ctaCreate": "Créer",
+      "errors": {
+        "quantity": "Indique une quantité valide.",
+        "generic": "Impossible d’enregistrer cette modification."
       }
     }
   },
@@ -979,6 +1387,31 @@
       "itemDeleteError": "Impossible de supprimer le plat.",
       "availabilityUpdated": "Disponibilité mise à jour.",
       "availabilityUpdateError": "Impossible de mettre à jour la disponibilité."
+    }
+  },
+  "adminReports": {
+    "title": "Rapports multi-franchisés",
+    "subtitle": "Déclenche un téléchargement pour n’importe quel franchisé du réseau.",
+    "helper": "Sélectionne un franchisé et récupère le rapport consolidé des 7 derniers jours.",
+    "fields": {
+      "franchisee": "Franchisé"
+    },
+    "placeholders": {
+      "franchisee": "Choisir un franchisé"
+    },
+    "actions": {
+      "generate": "Générer le rapport",
+      "generating": "Génération..."
+    },
+    "validation": {
+      "franchisee": "Sélectionne un franchisé avant de générer un rapport."
+    },
+    "messages": {
+      "success": "Téléchargement lancé."
+    },
+    "errors": {
+      "loadFranchisees": "Impossible de charger la liste des franchisés.",
+      "generate": "Impossible de générer le rapport."
     }
   }
 }

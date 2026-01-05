@@ -21,14 +21,42 @@ const defaultHeaders: HeadersInit = {
   'Content-Type': 'application/json',
 };
 
+const AUTH_TOKEN_KEY = 'drivncook:accessToken';
+export const AUTH_TOKEN_EVENT = 'drivncook:auth-token-changed';
+
+export const getStoredToken = (): string | null => {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+  return window.localStorage.getItem(AUTH_TOKEN_KEY);
+};
+
+export const setStoredToken = (token: string | null): void => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+  if (token) {
+    window.localStorage.setItem(AUTH_TOKEN_KEY, token);
+  } else {
+    window.localStorage.removeItem(AUTH_TOKEN_KEY);
+  }
+  window.dispatchEvent(
+    new CustomEvent<{ authenticated: boolean }>(AUTH_TOKEN_EVENT, {
+      detail: { authenticated: Boolean(token) },
+    }),
+  );
+};
+
 export async function apiRequest<T>(options: ApiRequestOptions): Promise<T> {
   const { path, parseJson = true, headers, body, ...rest } = options;
   const url = buildApiUrl(path);
+  const authToken = getStoredToken();
   const response = await fetch(url, {
     ...rest,
     headers: {
       ...defaultHeaders,
       ...headers,
+      ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}),
     },
     body,
   });

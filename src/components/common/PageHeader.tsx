@@ -11,7 +11,7 @@ interface PageHeaderProps {
 
 const PageHeader = ({ title, caption, backLabel, onBack, actions }: PageHeaderProps): React.ReactElement => {
   const renderedActions = React.Children.toArray(actions);
-  const showBackButton = Boolean(onBack && backLabel);
+  const showBackButton = Boolean(backLabel && onBack);
 
   return (
     <Stack spacing={caption ? 0.5 : 1} mb={4}>

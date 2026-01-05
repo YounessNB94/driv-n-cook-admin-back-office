@@ -13,6 +13,26 @@ export type CustomerOrderStatus = 'CREATED' | 'PREPARING' | 'READY' | 'COMPLETED
 export type TruckStatus = 'ASSIGNED' | 'IN_SERVICE' | 'IN_REPAIR';
 export type IncidentStatus = 'OPEN' | 'IN_PROGRESS' | 'RESOLVED';
 
+export interface AuthTokenResponse {
+  accessToken: string;
+  expiresAt?: string;
+}
+
+export interface FranchiseeRegistration {
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  companyName: string;
+  address: string;
+  phone?: string;
+}
+
+export interface FranchiseeLoginRequest {
+  email: string;
+  password: string;
+}
+
 export interface Franchisee {
   id: number;
   email: string;
@@ -52,6 +72,13 @@ export interface FranchiseApplicationPatch {
   paymentRef?: string;
 }
 
+export interface AdminFranchiseApplication extends FranchiseApplication {
+  note?: string;
+  franchisee?: Franchisee;
+}
+
+export interface AdminFranchiseApplicationDetail extends AdminFranchiseApplication {}
+
 export interface Warehouse {
   id: number;
   name: string;
@@ -62,6 +89,16 @@ export interface Warehouse {
 export interface InventoryItem {
   id: number;
   warehouseId: number;
+  name: string;
+  unit: string;
+  availableQuantity: number;
+}
+
+export interface WarehouseInventoryItemPatch {
+  availableQuantity: number;
+}
+
+export interface WarehouseInventoryItemCreate {
   name: string;
   unit: string;
   availableQuantity: number;
@@ -83,14 +120,16 @@ export interface WarehouseAvailability {
 
 export interface SupplyOrder {
   id: number;
+  code?: string;
   status: SupplyOrderStatus;
   pickupWarehouseId?: number;
   franchiseeId?: number;
   paid: boolean;
   paymentMethod?: PaymentMethod;
   paymentRef?: string;
-  createdAt: string;
+  totalCash?: number;
   updatedAt: string;
+  createdAt?: string;
 }
 
 export interface SupplyOrderPatch {
@@ -139,9 +178,27 @@ export interface Truck {
   assignedFranchiseeId?: number;
 }
 
+export interface TruckCreatePayload {
+  plateNumber: string;
+  currentWarehouseId: number;
+  status: TruckStatus;
+  name?: string;
+}
+
+export interface TruckPatch {
+  plateNumber?: string;
+  name?: string;
+  status?: TruckStatus;
+  currentWarehouseId?: number;
+  assignedFranchiseeId?: number | null;
+}
+
 export interface Incident {
   id: number;
   truckId: number;
+  truckPlateNumber?: string;
+  franchiseeId?: number;
+  franchiseeName?: string;
   description: string;
   status: IncidentStatus;
   createdAt: string;
@@ -159,6 +216,11 @@ export interface IncidentCreatePayload {
 export interface MaintenanceRecord {
   id: number;
   truckId: number;
+  date: string;
+  description: string;
+}
+
+export interface MaintenanceRecordCreatePayload {
   date: string;
   description: string;
 }
@@ -182,6 +244,7 @@ export interface ReportRequest {
   type: ReportType;
   from: string;
   to: string;
+  franchiseeId?: number;
 }
 
 export interface Report {
@@ -278,4 +341,9 @@ export interface MenuItemPatch {
 export interface ProfilePreferences {
   avatarDataUrl?: string;
   accentColor?: string;
+}
+
+export interface AdminFranchiseeDetail {
+  franchisee: Franchisee;
+  preferences?: ProfilePreferences;
 }

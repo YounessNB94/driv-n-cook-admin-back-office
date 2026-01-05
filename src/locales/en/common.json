@@ -26,8 +26,10 @@
       "title": "Request franchise access",
       "subtitle": "Share a few details and we will finalize your onboarding once authentication is fully open.",
       "messages": {
-        "pendingApi": "Franchise authentication endpoints are still being finalized. Submitting this form only keeps data locally for now.",
-        "success": "Thanks! Your information has been stored locally (mock). Our HQ team will reach out as soon as the secure flow is ready."
+        "success": "Account created! You can now start exploring your franchise space.",
+        "errorGeneric": "We couldn't complete your signup. Please try again shortly.",
+        "errorValidation": "Some fields look invalid. Please review the form.",
+        "pendingApi": "Franchise authentication endpoints are still being finalized. Submitting this form only keeps data locally for now."
       },
       "fields": {
         "firstName": { "label": "First name", "placeholder": "Sarah" },
@@ -45,8 +47,9 @@
       },
       "cta": {
         "submit": "Send my application",
-        "back": "Back to portal home",
-        "haveAccount": "Already have an account? Return to the portal home"
+        "loading": "Creating account...",
+        "back": "Back to landing",
+        "haveAccount": "Already have an account? Return to landing"
       },
       "validation": {
         "required": "This field is required.",
@@ -54,6 +57,29 @@
         "passwordLength": "Use at least {{count}} characters.",
         "maxLength": "Keep it under {{count}} characters.",
         "passwordMatch": "Passwords must match."
+      }
+    },
+    "login": {
+      "title": "Administrator login",
+      "messages": {
+        "errorInvalid": "Email or password is invalid.",
+        "errorGeneric": "We couldn't sign you in right now. Please try again shortly."
+      },
+      "fields": {
+        "email": { "label": "Email", "placeholder": "you@example.com" },
+        "password": { "label": "Password", "placeholder": "Your password" }
+      },
+      "cta": {
+        "submit": "Sign in",
+        "loading": "Signing in...",
+        "back": "Back to landing",
+        "goSignup": "Don't have an account yet? Sign up"
+      },
+      "validation": {
+        "required": "This field is required.",
+        "email": "Enter a valid email address.",
+        "maxLength": "Keep it under {{count}} characters.",
+        "passwordLength": "Use at least {{count}} characters."
       }
     }
   },
@@ -736,170 +762,56 @@
     }
   },
   "supplyOrders": {
-    "title": "Supply orders",
-    "subtitle": "Connected screens aligned with GET/POST/PATCH SupplyOrder endpoints described in doc/endpoints.md.",
-    "cta": {
-      "back": "Back to dashboard",
-      "new": "New order",
-      "refresh": "Refresh",
-      "manageItems": "Manage items",
-      "updateMeta": "Update order"
-    },
-    "table": {
-      "headers": {
-        "code": "Order",
-        "status": "Status",
-        "warehouse": "Warehouse",
-        "paid": "Payment",
-        "updatedAt": "Updated",
-        "actions": "Actions"
-      }
-    },
-    "statuses": {
-      "DRAFT": "Draft",
-      "CONFIRMED": "Confirmed",
-      "READY": "Ready",
-      "COLLECTED": "Collected"
-    },
-    "payment": {
+    "title": "Supply orders oversight",
+    "subtitle": "Monitor confirmed orders, payment status, and mark them ready for pickup.",
+    "loading": "Loading supply orders...",
+    "empty": "No confirmed supply orders at the moment.",
+    "badges": {
       "paid": "Paid",
       "unpaid": "Unpaid"
     },
-    "create": {
-      "title": "Create supply order",
-      "warehouseLabel": "Pickup warehouse",
-      "warehousePlaceholder": "Select a warehouse",
-      "noteLabel": "Internal note (optional)",
-      "submit": "Create",
-      "cancel": "Cancel",
-      "confirmationHelper": "Orders start as drafts without a warehouse. Add items first, then pick a warehouse when validating the order.",
-      "validation": {
-        "warehouseRequired": "Select a warehouse before creating the order."
-      },
-      "success": "Supply order created."
+    "actions": {
+      "markReady": "Mark as ready"
     },
-    "items": {
-      "title": "Manage order items",
-      "empty": "No items yet.",
-      "headers": {
-        "name": "Item",
-        "unit": "Unit",
-        "quantity": "Quantity"
-      },
-      "loadError": "Unable to load items for this order.",
-      "noWarehouse": "Assign a pickup warehouse before adding items.",
-      "inventoryFallback": "Item #{{id}}",
-      "add": {
-        "inventoryLabel": "Inventory item",
-        "inventoryPlaceholder": "Select an item",
-        "quantityLabel": "Quantity",
-        "submit": "Add",
-        "validation": {
-          "inventoryRequired": "Choose an item from the list.",
-          "quantityPositive": "Quantity must be greater than 0."
-        }
-      },
-      "update": {
-        "quantityLabel": "Quantity"
-      },
-      "success": "Items updated."
+    "table": {
+      "franchisee": "Franchisee",
+      "code": "Order code",
+      "warehouse": "Warehouse",
+      "paid": "Paid?",
+      "amount": "Amount",
+      "updatedAt": "Last update",
+      "actions": "Actions"
     },
-    "metadata": {
-      "title": "Update order",
-      "statusLabel": "Status",
-      "warehouseLabel": "Pickup warehouse",
-      "paymentSwitch": "Order paid",
-      "paymentMethodLabel": "Payment method",
-      "paymentRefLabel": "Reference",
-      "paymentMethodPlaceholder": "Select a payment method",
-      "submit": "Save",
-      "cancel": "Cancel",
-      "validation": {
-        "warehouseRequired": "Select a warehouse.",
-        "paymentMethodRequired": "Select a method when the order is marked paid."
-      },
-      "success": "Order updated.",
-      "availability": {
-        "helper": "Only warehouses with enough stock stay selectable.",
-        "loading": "Checking warehouse availability…",
-        "fetchError": "Unable to verify availability right now.",
-        "sufficient": "Stock OK",
-        "insufficient": "Insufficient stock",
-        "unavailable": "Unavailable",
-        "none": "No warehouse currently matches the requested quantities."
-      }
-    },
-    "messages": {
-      "empty": "No supply orders yet.",
-      "refresh": "List refreshed.",
-      "fetchError": "Unable to load supply orders. Try again shortly.",
-      "actionError": "Action failed. Please retry."
+    "errors": {
+      "load": "Unable to load supply orders.",
+      "update": "Unable to update this order."
     }
   },
   "appointments": {
-    "title": "Appointments",
-    "subtitle": "Connected view aligned with GET/POST/PATCH appointments endpoints (see doc/endpoints.md).",
-    "cta": {
-      "back": "Back to dashboard",
-      "new": "Plan appointment",
-      "refresh": "Refresh",
-      "edit": "Edit"
+    "title": "Network appointments",
+    "subtitle": "Monitor every pickup slot across franchisees with consolidated filters.",
+    "loading": "Loading appointments...",
+    "empty": "No appointments match your filters.",
+    "filters": {
+      "from": "From",
+      "to": "To",
+      "type": "Type",
+      "warehouse": "Warehouse"
     },
     "table": {
-      "headers": {
-        "type": "Type",
-        "warehouse": "Warehouse",
-        "link": "Link",
-        "datetime": "Date & time",
-        "status": "Status",
-        "actions": "Actions"
-      }
+      "datetime": "Date & time",
+      "type": "Type",
+      "warehouse": "Warehouse",
+      "franchisee": "Franchisee",
+      "link": "Linked entity",
+      "status": "Status"
     },
-    "typeOptions": {
-      "SUPPLY_PICKUP": "Supply pickup",
-      "TRUCK_PICKUP": "Truck pickup"
+    "links": {
+      "supply": "Supply order #{{id}}",
+      "truck": "Truck #{{id}}"
     },
-    "statusOptions": {
-      "SCHEDULED": "Scheduled",
-      "COMPLETED": "Completed",
-      "CANCELLED": "Cancelled"
-    },
-    "messages": {
-      "empty": "No appointments yet.",
-      "created": "Appointment created.",
-      "updated": "Appointment updated.",
-      "fetchError": "Unable to load appointments. Try again shortly.",
-      "createError": "Unable to create the appointment. Please retry.",
-      "updateError": "Unable to update the appointment. Please retry.",
-      "supplyOrderFallback": "Order #{{id}}",
-      "truckFallback": "Truck #{{id}}"
-    },
-    "create": {
-      "title": "Plan an appointment",
-      "typeLabel": "Type",
-      "warehouseLabel": "Warehouse",
-      "warehousePlaceholder": "Select a warehouse",
-      "supplyOrderLabel": "Supply order",
-      "supplyOrderPlaceholder": "Select an order",
-      "truckLabel": "Truck",
-      "truckPlaceholder": "Select a truck",
-      "datetimeLabel": "Date & time",
-      "submit": "Create",
-      "cancel": "Cancel",
-      "validation": {
-        "typeRequired": "Select a type.",
-        "warehouseRequired": "Select a warehouse.",
-        "datetimeRequired": "Select a date and time.",
-        "supplyOrderRequired": "Choose a supply order for this pickup.",
-        "truckRequired": "Choose a truck for this pickup."
-      }
-    },
-    "edit": {
-      "title": "Edit appointment",
-      "datetimeLabel": "Date & time",
-      "statusLabel": "Status",
-      "submit": "Save",
-      "cancel": "Cancel"
+    "errors": {
+      "load": "Unable to load appointments."
     }
   },
   "menu": {
@@ -986,5 +898,325 @@
       "availabilityUpdated": "Availability updated.",
       "availabilityUpdateError": "Unable to update availability."
     }
+  },
+  "backoffice": {
+    "common": {
+      "backToDashboard": "Back to admin dashboard"
+    },
+    "dashboard": {
+      "title": "Admin dashboard",
+      "subtitle": "Keep an eye on incidents, supply orders, and key appointments across the network.",
+      "loading": "Loading admin overview...",
+      "summary": {
+        "title": "At a glance",
+        "incidents": {
+          "title": "Truck incidents",
+          "value": "{{count}} open or in progress",
+          "helper": "Open: {{open}} · In progress: {{inProgress}}",
+          "action": "Review incidents"
+        },
+        "supply": {
+          "title": "Confirmed supply orders",
+          "value": "{{count}} awaiting pickup",
+          "helper": "Filtered on status CONFIRMED",
+          "action": "Go to supply orders"
+        },
+        "appointments": {
+          "title": "Next appointment",
+          "value": "{{date}}",
+          "empty": "No appointment scheduled",
+          "helper": "Warehouse: {{warehouse}}",
+          "helperEmpty": "No upcoming appointments",
+          "action": "Go to appointments"
+        }
+      },
+      "quickLinks": {
+        "title": "Quick links"
+      },
+      "links": {
+        "franchisees": "Franchisees",
+        "applications": "Applications",
+        "trucks": "Trucks",
+        "warehouses": "Warehouses",
+        "supplyOrders": "Supply orders",
+        "appointments": "Appointments",
+        "incidents": "Incidents",
+        "reports": "Reports"
+      },
+      "errors": {
+        "load": "Unable to load dashboard data."
+      }
+    },
+    "franchisees": {
+      "title": "Franchisees",
+      "subtitle": "Review every franchise profile and open detailed cards in one click.",
+      "columns": {
+        "name": "Name",
+        "email": "Email",
+        "company": "Company",
+        "phone": "Phone",
+        "createdAt": "Joined",
+        "actions": "Actions"
+      },
+      "actions": {
+        "viewProfile": "View profile"
+      },
+      "detail": {
+        "title": "Franchisee profile",
+        "subtitle": "Full profile dedicated to admin review.",
+        "loading": "Loading franchisee profile...",
+        "loadError": "Unable to load this profile right now.",
+        "joinedOn": "Joined on {{date}}",
+        "identity": "Identity",
+        "contact": "Contact",
+        "company": "Company",
+        "address": "Address",
+        "preferences": "Preferences",
+        "accentColor": "Accent color: {{color}}",
+        "notProvided": "Not provided"
+      },
+      "emptyState": "No franchisee to display.",
+      "loadError": "Unable to load franchisees. Please try again."
+    },
+    "franchiseApplications": {
+      "title": "Franchisee applications",
+      "subtitle": "Monitor every pending request, verify payments, and decide in a single place.",
+      "loading": "Loading applications...",
+      "loadingDetail": "Loading application detail...",
+      "emptyState": "No application matches your filters.",
+      "filters": {
+        "search": "Search",
+        "searchPlaceholder": "Name or email",
+        "status": "Status"
+      },
+      "table": {
+        "columns": {
+          "id": "ID",
+          "candidate": "Candidate",
+          "email": "Email",
+          "createdAt": "Submitted",
+          "paid": "payment status",
+          "actions": "Actions"
+        }
+      },
+      "actions": {
+        "viewDetail": "View detail",
+        "approve": "Approve",
+        "reject": "Reject"
+      },
+      "detail": {
+        "title": "Application detail",
+        "subtitle": "Application #{{id}}",
+        "infoSection": "Information",
+        "candidateSection": "Candidate",
+        "paymentSection": "Payment",
+        "note": "Note",
+        "createdAt": "Submitted on",
+        "updatedAt": "Updated on",
+        "paid": "Paid",
+        "paymentMethod": "Payment method"
+      },
+      "badges": {
+        "paid": "Paid",
+        "unpaid": "Unpaid"
+      },
+      "dialog": {
+        "approveTitle": "Approve this application",
+        "approveMessage": "The candidate will be marked as approved.",
+        "rejectTitle": "Reject this application",
+        "rejectMessage": "The candidate will be notified of the refusal.",
+        "confirm": "Confirm"
+      },
+      "errors": {
+        "load": "Unable to load applications.",
+        "loadDetail": "Unable to load this application.",
+        "updateStatus": "Unable to update the status.",
+        "invalidId": "This application ID is invalid."
+      }
+    },
+    "trucks": {
+      "title": "Fleet management",
+      "subtitle": "Supervise all trucks, track assignment, and create new vehicles.",
+      "loading": "Loading trucks...",
+      "empty": "No trucks registered yet.",
+      "actions": {
+        "newTruck": "New truck",
+        "unassign": "Unassign"
+      },
+      "assign": {
+        "placeholder": "Assign franchisee"
+      },
+      "table": {
+        "plate": "Plate number",
+        "name": "Name",
+        "status": "Status",
+        "warehouse": "Warehouse",
+        "assigned": "Franchisee",
+        "actions": "Actions"
+      },
+      "status": {
+        "ASSIGNED": "Assigned",
+        "IN_SERVICE": "In service",
+        "IN_REPAIR": "In repair",
+        "unknown": "Unknown"
+      },
+      "warehouse": {
+        "unassigned": "No warehouse"
+      },
+      "assignedLabel": "Franchisee #{{id}}",
+      "create": {
+        "title": "Create a truck",
+        "plate": "Plate number",
+        "name": "Display name",
+        "status": "Status",
+        "warehouse": "Warehouse",
+        "submit": "Create",
+        "validation": {
+          "required": "Plate and warehouse are required."
+        }
+      }
+    },
+    "supplyOrders": {
+      "title": "Supply orders oversight",
+      "subtitle": "Monitor confirmed orders, payment status, and mark them ready for pickup.",
+      "loading": "Loading supply orders...",
+      "empty": "No confirmed supply orders at the moment.",
+      "badges": {
+        "paid": "Paid",
+        "unpaid": "Unpaid"
+      },
+      "actions": {
+        "markReady": "Mark as ready"
+      },
+      "table": {
+        "franchisee": "Franchisee",
+        "code": "Order code",
+        "warehouse": "Warehouse",
+        "paid": "Paid?",
+        "amount": "Amount",
+        "updatedAt": "Last update",
+        "actions": "Actions"
+      },
+      "errors": {
+        "load": "Unable to load supply orders.",
+        "update": "Unable to update this order."
+      }
+    },
+    "incidents": {
+      "title": "Truck incidents & maintenance",
+      "subtitle": "Review every incident and close them with a maintenance trace.",
+      "loading": "Loading incidents...",
+      "empty": "No incident to display.",
+      "errors": {
+        "load": "Unable to load incidents.",
+        "resolve": "Unable to resolve this incident."
+      },
+      "table": {
+        "id": "Incident",
+        "truck": "Truck",
+        "unknownTruck": "Unknown truck",
+        "franchisee": "Franchisee",
+        "description": "Description",
+        "status": "Status",
+        "date": "Date",
+        "actions": "Actions"
+      },
+      "status": {
+        "OPEN": "Open",
+        "IN_PROGRESS": "In progress",
+        "RESOLVED": "Resolved"
+      },
+      "actions": {
+        "resolve": "Resolve"
+      },
+      "dialog": {
+        "title": "Create maintenance record",
+        "fields": {
+          "date": "Maintenance date",
+          "description": "Maintenance description"
+        },
+        "errors": {
+          "date": "Enter a maintenance date.",
+          "description": "Describe the maintenance work."
+        },
+        "cta": "Confirm resolution"
+      }
+    },
+    "warehouses": {
+      "title": "Network warehouses",
+      "subtitle": "Review stock levels and trigger replenishments anywhere in the network.",
+      "loading": "Loading warehouses...",
+      "empty": "No warehouse to display.",
+      "errors": {
+        "load": "Unable to load warehouses.",
+        "inventory": "Unable to load the inventory for this warehouse.",
+        "restock": "Unable to refresh stock.",
+        "generic": "Something went wrong."
+      },
+      "table": {
+        "name": "Name",
+        "address": "Address",
+        "phone": "Phone",
+        "actions": "Actions"
+      },
+      "actions": {
+        "viewStock": "View stock",
+        "restock": "Restock",
+        "createStock": "Create item"
+      },
+      "drawer": {
+        "subtitle": "Inventory overview",
+        "loading": "Loading inventory...",
+        "empty": "No inventory item yet.",
+        "itemSubtitle": "Item #{{id}}"
+      },
+      "restock": {
+        "titleUpdate": "Update quantity",
+        "titleCreate": "Create inventory item",
+        "fields": {
+          "name": "Item name",
+          "unit": "Unit",
+          "quantity": "Quantity"
+        },
+        "ctaUpdate": "Update",
+        "ctaCreate": "Create",
+        "errors": {
+          "quantity": "Enter a valid quantity.",
+          "generic": "Unable to save this change."
+        }
+      }
+    },
+    "adminReports": {
+      "title": "Multi-franchisee reports",
+      "subtitle": "Trigger a report download for any franchisee in the network.",
+      "helper": "Pick a franchisee and the platform will generate the latest consolidated report of 7 last days.",
+      "fields": {
+        "franchisee": "Franchisee"
+      },
+      "placeholders": {
+        "franchisee": "Select a franchisee"
+      },
+      "actions": {
+        "generate": "Generate report",
+        "generating": "Generating..."
+      },
+      "validation": {
+        "franchisee": "Select a franchisee before generating a report."
+      },
+      "messages": {
+        "success": "Report download started."
+      },
+      "errors": {
+        "loadFranchisees": "Unable to load franchisee list.",
+        "generate": "Unable to generate the report."
+      }
+    }
+  },
+  "common": {
+    "refresh": "Refresh",
+    "change": "Change",
+    "rowsPerPage": "Rows per page",
+    "notProvided": "Not provided",
+    "back": "Back"
   }
 }
